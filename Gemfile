@@ -10,6 +10,7 @@ gem 'stripe'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "shrine", "~> 2.0"
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
@@ -46,6 +47,10 @@ group :development, :test do
 
   # rspec-rails
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+
+  gem 'capistrano', '~> 3.10', '>= 3.10.2'
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
+  gem 'capistrano-passenger', '~> 0.2.0'
 end
 
 group :development do

@@ -11,5 +11,5 @@ class User < ApplicationRecord
   has_many :accounts
   has_many :loan_applications
   has_many :investments
-
+user_id: params[:id]
 end
