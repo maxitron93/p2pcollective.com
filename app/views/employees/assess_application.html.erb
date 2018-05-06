@@ -1,0 +1,100 @@
+<h1>Assess application</h1>
+
+<h2>Application id: <%= @loan_application.id %> </h2>
+
+<p>
+  <strong>User email:</strong>
+  <%= User.find(@loan_application.user_id).email %>
+</p>
+
+<p>
+  <strong>Submitted:</strong>
+  <%= @loan_application.updated_at %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @loan_application.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @loan_application.last_name %>
+</p>
+
+<p>
+  <strong>Loan amount:</strong>
+  <%= @loan_application.loan_amount / 100 %>
+</p>
+
+<p>
+  <strong>Loan term:</strong>
+  <%= @loan_application.loan_term %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @loan_application.purpose %>
+</p>
+
+<p>
+  <strong>Loan Category:</strong>
+  <%= LoanCategory.find(@loan_application.loan_category_id).label %>
+</p>
+
+<p>
+  <strong>Street Address:</strong>
+  <%= @loan_application.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @loan_application.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @loan_application.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @loan_application.postcode %>
+</p>
+
+<p>
+  <strong>Employment Type:</strong>
+  <%= EmploymentType.find(@loan_application.employment_type_id).label %>
+</p>
+
+<p>
+  <strong>Weekly Income:</strong>
+  <%= @loan_application.weekly_income / 100 %>
+</p>
+
+<p>
+  <strong>Weekly Expenses:</strong>
+  <%= @loan_application.weekly_expenses / 100 %>
+</p>
+
+<p>
+  <strong>Work Gap Months:</strong>
+  <%= @loan_application.work_gap_months %>
+</p>
+
+<% if @loan_application.license_url.nil? %>
+  <p>No license uploaded</p>
+<% else %>
+  <p>License:</p>
+  <p><%= image_tag @loan_application.license_url, width: '400px' %></p>
+<% end %>
+
+<% if @loan_application.pay_slip_url.nil? %>
+  <p>No pay slips uploaded</p>
+<% else %>
+  <p>Pay slip:</p>
+  <p><%= image_tag @loan_application.pay_slip_url, width: '400px' %></p>
+<% end %>
+
+<p><%= link_to "Approve", approve_application_path(id: @loan_application.id), method: :post %></p>
+<%= link_to "Back", :back %> <strong>Link to previous visited page</strong>

@@ -1,0 +1,36 @@
+<h1>Active Loan ID: <%= @active_loan.id %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to "Back", :back %> <strong>Link to previous visited page</strong>
+
+<% if @active_loan.status == "unfunded" %>
+  <%= form_tag investment_path(id: @active_loan.id), method: :post do %>
+    <p><%= label_tag 'Enter investment amount' %></p>
+    <p><%= number_field_tag 'investment_amount' %></p>
+    <p><%= submit_tag 'Commit Investment' %></p>
+  <% end %>
+<% end %>
+
+<% if @active_loan.status == "funded" && @active_loan.user_id == current_user.id %>
+  <%= form_tag repay_loan_confirmation_path(id: @active_loan.id), method: :post do %>
+    <p><%= label_tag 'Enter repayment amount' %></p>
+    <p><%= number_field_tag 'repayment_amount' %></p>
+    <p><%= submit_tag 'Make repayment' %></p>
+  <% end %>
+<% end %>
+
+<p>Loan amount: <%= @active_loan.opening_balance / 100 %></p>
+<% if @status == "unfunded" %>
+  <p>Committed Investments: <strong><%= "Needs to be calculated from total of Investments" %></strong></p>
+  <p>Investment opportunitiy remaing: <strong><%= "Calculation" %></strong></p>
+<% end %>
+<p>Loan term: <%= @active_loan.loan_term %> months</p>
+<p>Purpose: <%= @active_loan.purpose %></p>
+<p>Category: <%= @active_loan.category %></p>
+<p>Interest rate: <%= @active_loan.interest_rate %>%</p>
+<p>Monthly repayment: $<%= @active_loan.periodic_repayment_amount %></p>
+<p>Repayment capacity: $<%= @active_loan.repayment_capacity / 100 %></p>
+<p>Employment type: <%= @active_loan.employment_type %></p>
+<p>Work gap months: <%= @active_loan.work_gap_months %></p>
+<p>Created: <%= time_ago_in_words(@active_loan.created_at) %> ago</p>

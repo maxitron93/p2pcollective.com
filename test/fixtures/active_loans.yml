@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  status: MyString
+  opening_balance: 9.99
+  loan_term: 1
+  purpose: MyText
+
+two:
+  user: two
+  status: MyString
+  opening_balance: 9.99
+  loan_term: 1
+  purpose: MyText

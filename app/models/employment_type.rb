@@ -1,0 +1,2 @@
+class EmploymentType < ApplicationRecord
+end

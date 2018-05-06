@@ -1,0 +1,7 @@
+<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+
+<%= form_tag new_charge_path, method: :get do %>
+  <p>Enter amount:</p>
+  <%= text_field_tag 'amount' %>
+  <%= submit_tag 'Add cash' %>
+<% end %>

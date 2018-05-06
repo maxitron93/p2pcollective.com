@@ -1,0 +1,34 @@
+<h1>Employees#awaiting_assessment</h1>
+<p>Find me in app/views/employees/awaiting_assessment.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Status</th>
+      <th>Loan amount</th>
+      <th>Loan term</th>
+      <th>Purpose</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loan_applications.each do |loan_application| %>
+      <tr>
+        <td><%= loan_application.user.email %></td>
+        <td><%= loan_application.status %></td>
+        <td><%= loan_application.loan_amount / 100 %></td>
+        <td><%= loan_application.loan_term %></td>
+        <td><%= loan_application.purpose %></td>
+        <td><%= link_to 'Assess application', assess_application_path(id: loan_application.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

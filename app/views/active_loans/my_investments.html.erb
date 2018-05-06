@@ -1,0 +1,24 @@
+<h1>My investments</h1>
+
+<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+
+<% @investments_by_status.each do |investment| %>
+  <h2><%= link_to "Loan ID: #{investment.active_loan_id}", show_active_loan_path(id: investment.active_loan_id) %></h2>
+  <p>Investment amount: $<%= investment.opening_balance / 100 %></p>
+  <p>Monthly repayments: $<%= (investment.repayment_amount / 100).round(2) %></p>
+  <% if ActiveLoan.find(investment.active_loan_id).status == "funded" %>
+    <p>Loan start date: <%= investment.created_at %></p>
+    <p>Loan end date: <%= ActiveLoan.find(investment.active_loan_id).loan_term %></p>
+  <% elsif ActiveLoan.find(investment.active_loan_id).status == "unfunded" %>
+    <p>Loan amount: $<%= ActiveLoan.find(investment.active_loan_id.to_i).opening_balance / 100 %></p>
+    
+    <% amount_invested_so_far = 0 %>
+    <% Investment.where(active_loan_id: investment.active_loan_id).each do |investment| %>
+      <% amount_invested_so_far += investment.opening_balance %>
+    <% end %>
+    
+    <p>Amount funded so far: $<%= amount_invested_so_far / 100 %> </p>
+    <p>Investment opportunity remaining: $<%= (ActiveLoan.find(investment.active_loan_id.to_i).opening_balance - amount_invested_so_far) / 100 %> </p>
+    
+  <% end %>
+<% end %>

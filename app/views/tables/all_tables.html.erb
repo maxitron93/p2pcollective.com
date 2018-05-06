@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <style type="text/css">
+
+    * {
+      /* border: 1px solid red; */
+      border: 1px solid transparent;
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: verdana;
+    }
+    
+    .clearfix {zoom: 1}
+    .clearfix:after {
+      content: "";
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+
+    h1 {
+      padding: 30px;
+    }
+
+    h2 {
+      color: darkblue;
+      background: lightblue;
+      padding: 5px 0;
+    }
+
+    h3 {
+      color: darkblue;
+      border-bottom: 1px solid darkblue;
+    }
+
+    .one-table {
+      display: inline-block;
+      width: 21.7%;
+      margin: 10px 1.5%;
+      padding: 0px;
+      vertical-align: top;
+      border: 1px solid darkblue;
+    }
+
+    .number {
+      display: inline-block;
+      width: 30px;
+    }
+
+    .type {
+      color: grey;
+    }
+
+ </style>
+
+  <title>All Tables</title>
+</head>
+  <body>
+
+    <h1>List of all your Tables</h1>
+    
+    <% @all_models.each do |model| %>
+
+      <%# Converts the string to the model name %>
+      <% model = model.constantize %>
+      
+       
+      <div class="one-table clearfix">
+      <h2><%= link_to model, table_path(model), method: :get %></h2>
+      <h3>Number of records: <%= model.all.count %></h3>
+      <% count = 1 %>
+      <p><% model.columns_hash.each do |column_heading, column_type| %></p>
+        <div class="column_name"><span class="number"><%= "#{count}." %></span><span class="heading"><%= column_heading %></span> <span class="type">(<%= column_type.type %>)</span></div>
+        <% count += 1 %>
+      <% end %>
+      </div>
+    <% end %>
+
+  </body>
+</html>

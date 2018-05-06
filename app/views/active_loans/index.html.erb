@@ -1,0 +1,31 @@
+<h1>Browse Investments</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+<p><%= @status %></p>
+
+<% @active_loans.each do |active_loan| %>
+  <br>
+  <h3><%= link_to "Loan by #{User.find(active_loan.user_id).email}", show_active_loan_path(id: active_loan.id) %></h3>
+
+  <p>Loan amount: <%= active_loan.opening_balance / 100 %></p>
+  <% if @status == "unfunded" %>
+    <p>Committed Investments: <strong><%= "Needs to be calculated from total of Investments" %></strong></p>
+    <p>Investment opportunitiy remaing: <strong><%= "Calculation" %></strong></p>
+  <% end %>
+  <p>Loan term: <%= active_loan.loan_term %> months</p>
+  <p>Purpose: <%= active_loan.purpose %></p>
+  <p>Category: <%= active_loan.category %></p>
+  <p>Interest rate: <%= active_loan.interest_rate %>%</p>
+  <p>Monthly repayment: $<%= active_loan.periodic_repayment_amount %></p>
+  <p>Repayment capacity: $<%= active_loan.repayment_capacity / 100 %></p>
+  <p>Employment type: <%= active_loan.employment_type %></p>
+  <p>Work gap months: <%= active_loan.work_gap_months %></p>
+  <p>Created: <%= time_ago_in_words(active_loan.created_at) %> ago</p>
+  
+  <% if @status == "pending approval" %>
+    <%= link_to "Go live!", approve_active_loan_path(id: active_loan.id), method: :post %>
+  <% end %>
+
+<% end %>

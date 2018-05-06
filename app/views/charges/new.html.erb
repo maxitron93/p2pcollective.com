@@ -1,0 +1,24 @@
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $<%= @amount %></span>
+    </label>
+  </article>
+  
+  <%= hidden_field_tag 'amount', @amount  %>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Add $<%= @amount %> to my Cash account"
+          data-amount="<%= @amount.to_i*100 %>"
+          data-locale="auto"
+          data-currency="AUD"
+          data-email="<%= current_user.email %>"
+          data-allow-remember-me="false"></script>
+  
+<% end %>

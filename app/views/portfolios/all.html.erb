@@ -1,0 +1,29 @@
+<h3><%= link_to "Cash:", account_history_path(id: @cash_account_id) %> <%= @cash_balance %></h3>
+<p><%= link_to "Add cash", add_cash_path %> | <%= link_to "Withdraw cash", withdraw_cash_path %></p>
+
+<h3><%= link_to "Active investments:", account_history_path(id: @active_investments_acocunt_id) %> <%= @active_investments_balance %></h3>
+<p><%= link_to "My active investments", my_investments_path(status: "funded") %> <strong>Link to my_investments</strong></p>
+
+<h3><%= link_to "Pending investments:", account_history_path(id: @pending_investments_account_id) %> <%= @pending_investments_balance %></h3>
+<p><%= link_to "My pending investments", my_investments_path(status: "unfunded") %> <strong>Link to my_investments</strong></p>
+
+<% if @distressed_investments_exists %>
+  <h3><%= link_to "Distressed investments:", account_history_path(id: @distressed_investments_account_id) %> <%= @distressed_investments %></h3>
+  <p><%= link_to "My distressed investments", my_investments_path(status: "defaulted") %> <strong>Link to my_investments</strong></p>
+<% end %>
+
+<h3><%= link_to "Outstanding loans:", account_history_path(id: @outstanding_loans_account_id) %> <%= @outstanding_loans %></h3>
+<p><%= link_to "My outstanding loans", my_active_loans_index_path(status: "funded") %> <strong>Link to my_index</strong></p>
+
+<% if @defaulted_loans_exists %>
+  <h3><%= link_to "Defaulted loans:", account_history_path(id: @defaulted_loans_account_id) %> <%= @defaulted_loans %></h3>
+<% end %>
+
+<br>
+<p>Temporarily here but needs to be moved to nav bar</p>
+<p><%= link_to "My loan applications", my_loan_applications_path %></p>
+<p><%= link_to "Browse investments", active_loans_index_path(status: "unfunded") %> <strong>Link to public index</strong></p> 
+
+<br>
+<p>Temporarily here but needs to be deleted and only accessable by employees</p>
+<%= link_to "Loan applications awaiting assessment", awaiting_assessment_path %>

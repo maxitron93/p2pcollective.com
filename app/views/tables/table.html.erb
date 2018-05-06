@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <style type="text/css">
+
+    * {
+      /* border: 1px solid red; */
+      border: 1px solid transparent;
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: verdana;
+    }
+    
+    .clearfix {zoom: 1}
+    .clearfix:after {
+      content: "";
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+
+    body {
+      margin: 30px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .nav-button {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .nav-button a:link,
+    .nav-button a:visited {
+      padding: 5px 15px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background: pink;
+      text-decoration: none;
+      color: black;
+    }
+
+    th {
+      padding: 5px;
+      border-bottom: 1px solid darkblue;
+      border-right: 1px solid darkblue;
+      color: white;
+      background: darkblue;
+    }
+
+    td {
+      padding: 5px;
+      border-bottom: 1px solid darkblue;
+      border-right: 1px solid darkblue;
+      font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+      background: lightblue;
+    }
+
+    td:hover {
+      background: lightgreen;
+    }
+
+ </style>
+
+  <title><%= @model %></title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<h1><%= @model %> Table</h1>
+
+<% @model = @model.constantize %>
+
+<h2>Total entries: <%= @model.all.count %> </h2>
+
+<div class="nav-button"><%= link_to 'Back', tables_path %></div>
+
+<table>
+  <tr>
+    <% @model.column_names.each do |column_heading| %>
+    <th><%= column_heading %></th>
+    <% end %>
+  </tr>
+
+  <tr>
+    <% @model.columns_hash.each do |column_heading, column_type| %>
+    <th><%= column_type.type %></th>
+    <% end %>
+  </tr>
+
+  <% @model.all.each do |table_row| %>
+    <tr>
+      <% @model.column_names.each do |column_heading| %>
+        <td><%= table_row.send(column_heading) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+
+</table>

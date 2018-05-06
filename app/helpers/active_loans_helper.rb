@@ -1,0 +1,2 @@
+module ActiveLoansHelper
+end

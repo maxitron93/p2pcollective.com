@@ -1,0 +1,2 @@
+class LoanCategory < ApplicationRecord
+end
