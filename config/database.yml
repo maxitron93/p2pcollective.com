@@ -17,16 +17,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
-  host: <%= ENV['POSTGRES_HOST'] %>
-
+  
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: <%= ENV['POSTGRES_HOST'] %>
   database: p2pcollective_com_development
 
   # The specified database role being used to connect to postgres.
@@ -86,10 +86,10 @@ staging:
   <<: *default
   database: p2pcollective_com_staging
   username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['P2PCOLLECTIVE_COM_DATABASE_PASSWORD'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 production:
   <<: *default
   database: p2pcollective_com_production
   username: <%= ENV['POSTGRES_USERNAME'] %>
-  password: <%= ENV['P2PCOLLECTIVE_COM_DATABASE_PASSWORD'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
