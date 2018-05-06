@@ -242,6 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (~> 5.1, >= 5.1.6)
   byebug
   capistrano (~> 3.10, >= 3.10.2)
   capistrano-passenger (~> 0.2.0)
