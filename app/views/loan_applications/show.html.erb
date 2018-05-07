@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Back", :back %> <strong>Link to previous visited page</strong>
+<%= link_to 'Back', my_loan_applications_with_status_path(status: @status) %><strong>Link to my_loan_applications_path_with_stats (status = @status)) </strong>
 <% if @status == "saved" %>
 <%= link_to 'Edit', edit_loan_application_path(@loan_application) %> |
 <%= link_to 'Destroy', loan_application_path(@loan_application), method: :delete, data: { confirm: 'Are you sure?' } %> |

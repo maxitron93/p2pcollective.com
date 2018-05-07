@@ -12,6 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/public/*.png
+/public/uploads/*.jpg
+/public/uploads/cache/*.jpg
 
 /node_modules
 /yarn-error.log
