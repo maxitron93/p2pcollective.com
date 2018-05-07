@@ -1,0 +1,101 @@
+/*****************************************/
+/*************SETUP***************/
+/*****************************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  // border: 0.2px solid rgb(255, 151, 151);
+  border: 0.2px solid transaprent;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  color: #4F4F4F;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background: #F2F2F2;
+  padding-bottom: 80px;
+}
+
+/*****************************************/
+/*************HEADER***************/
+/*****************************************/
+header {
+  background: #2F80ED;
+}
+
+.logo {
+  display: inline-block;
+  width: 49.5%;
+  padding: 5px 0px 5px 3%;
+  font-size: 150%;
+  color: #F2F2F2;
+  width: 70%;
+}
+
+.user-email {
+  display: inline-block;
+  padding: 0px 0px 10px 3%;
+  font-size: 110%;
+  color: #F2F2F2;
+  width: 70%;
+}
+
+.nav-icon {
+  display: inline-block;
+  position: absolute;
+  right: 3%;
+  top: 10px;
+  font-size: 200%;
+  color: #F2F2F2;
+}
+
+/*****************************************/
+/*************ACCOUNTS SECTION***************/
+/*****************************************/
+.section-accounts {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.account-div {
+  position: relative;
+  margin: 40px 0 8px 0;
+}
+
+.interact-div:nth-last-child(1) {
+  margin-bottom: 40px;
+}
+
+.account,
+.account a,
+.account-balance {
+  display: inline-block;
+  font-size: 120%;
+  text-decoration: none;
+}
+
+.account-balance {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+
+.interact-div a {
+  text-decoration: none;
+  font-size: 110%;
+}
+
+/*****************************************/
+/*************FOOTER***************/
+/*****************************************/
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 80px;
+  background: #2F80ED;
+  text-align: center;
+}

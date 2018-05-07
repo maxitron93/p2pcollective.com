@@ -15,3 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( pages.scss )
 
 Rails.application.config.assets.precompile += %w( devise.css )
+
+Rails.application.config.assets.precompile += %w( portfolios.css )

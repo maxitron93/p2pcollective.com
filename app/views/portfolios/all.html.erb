@@ -1,24 +1,63 @@
-<h3><%= link_to "Cash:", account_history_path(id: @cash_account_id) %> <%= @cash_balance %></h3>
-<p><%= link_to "Add cash", add_cash_path %> | <%= link_to "Withdraw cash", withdraw_cash_path %></p>
+<section class="section-accounts">
+  
+  <div class="cash-account account-div">
+    <p class="account"><%= link_to "Cash", account_history_path(id: @cash_account_id) %></p>
+    <p class="account-balance"><%= number_to_currency(@cash_balance, percision: 2) %></p>
+  </div>
+  
+  <div class="cash-intereact interact-div">
+    <p><%= link_to "Add cash  ", add_cash_path %> | <%= link_to "  Withdraw cash", withdraw_cash_path %></p>
+  </div>
+  
+  <div class="active-account account-div">
+    <p class="account"><%= link_to "Active investments", account_history_path(id: @active_investments_acocunt_id) %></p> 
+    <p class="account-balance"><%= number_to_currency(@active_investments_balance, percision: 2) %></p>
+  </div>
 
-<h3><%= link_to "Active investments:", account_history_path(id: @active_investments_acocunt_id) %> <%= @active_investments_balance %></h3>
-<p><%= link_to "My active investments", my_investments_path(status: "funded") %> <strong>Link to my_investments</strong></p>
+  <div class="active-interact interact-div">
+    <p><%= link_to "My active investments", my_investments_path(status: "funded") %></p>
+  </div>
 
-<h3><%= link_to "Pending investments:", account_history_path(id: @pending_investments_account_id) %> <%= @pending_investments_balance %></h3>
-<p><%= link_to "My pending investments", my_investments_path(status: "unfunded") %> <strong>Link to my_investments</strong></p>
+  <div class="pending-account account-div">
+    <p class="account"><%= link_to "Pending investments", account_history_path(id: @pending_investments_account_id) %></p> 
+    <p class="account-balance"><%= number_to_currency(@pending_investments_balance, percision: 2) %></p>
+  </div>
 
-<% if @distressed_investments_exists %>
-  <h3><%= link_to "Distressed investments:", account_history_path(id: @distressed_investments_account_id) %> <%= @distressed_investments %></h3>
-  <p><%= link_to "My distressed investments", my_investments_path(status: "defaulted") %> <strong>Link to my_investments</strong></p>
-<% end %>
+  <div class="pending-interact interact-div">
+    <p><%= link_to "My pending investments", my_investments_path(status: "unfunded") %></p>
+  </div>
 
-<h3><%= link_to "Outstanding loans:", account_history_path(id: @outstanding_loans_account_id) %> <%= @outstanding_loans %></h3>
-<p><%= link_to "My outstanding loans", my_active_loans_index_path(status: "funded") %> <strong>Link to my_index</strong></p>
+  
+  <% if @distressed_investments_exists %>
+    <div class="distressed-accounts account-div">
+      <p class="account"><%= link_to "Distressed investments", account_history_path(id: @distressed_investments_account_id) %></p>
+      <p class="account-balance"><%= number_to_currency(@distressed_investments, percision: 2) %></p>
+    </div>
 
-<% if @defaulted_loans_exists %>
-  <h3><%= link_to "Defaulted loans:", account_history_path(id: @defaulted_loans_account_id) %> <%= @defaulted_loans %></h3>
-<% end %>
+    <div class="distressed-interact interact-div">
+      <p><%= link_to "My distressed investments", my_investments_path(status: "defaulted") %></p>
+    </div>
+  <% end %>
+  
 
+  <div class="outstanding-account account-div">
+    <p class="account"><%= link_to "Outstanding loans:", account_history_path(id: @outstanding_loans_account_id) %></p> 
+    <p class="account-balance"><%= number_to_currency(@outstanding_loans, percision: 2) %></p>
+  </div>
+
+  <div class="outstanding-interact interact-div">
+    <p><%= link_to "My outstanding loans", my_active_loans_index_path(status: "funded") %></p>
+  </div>
+  
+  <% if @defaulted_loans_exists %>
+    <div class="defaulted-account account-div">
+      <p><%= link_to "Defaulted loans:", account_history_path(id: @defaulted_loans_account_id) %> <%= number_to_currency(@defaulted_loans, percision: 2) %></p>
+    </div>
+  <% end %>
+  
+
+</section>
+<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 <br>
 <p>Temporarily here but needs to be moved to nav bar</p>
 <p><%= link_to "My loan applications", my_loan_applications_path %></p>
