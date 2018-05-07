@@ -1,12 +1,14 @@
-<p>Temporarily here but needs to be moved to nav bar</p>
-<p><%= link_to "How this works", how_this_works_path %></p>
-<p><%= link_to "Borrow money", borrow_money_path %></p>
-<p><%= link_to "Become an investor", become_an_investor_path %></p>
-<p><%= link_to "About us", about_us_path %></p>
-<p><%= link_to "Contact us", contact_us_path %></p>
+<%# <p>Temporarily here but needs to be moved to nav bar</p> %>
+<%# <p>= link_to "How this works", how_this_works_path</p> %>
+<%# <p>= link_to "Borrow money", borrow_money_path</p> %>
+<%# <p>= link_to "Become an investor", become_an_investor_path</p> %>
+<%# <p>= link_to "About us", about_us_path</p> %>
+<%# <p>= link_to "Contact us", contact_us_path</p> %>
 
-<section>
-  
+<section class="loans-section">
+    <p class="promotion"><%= @all_funded_active_loans_count%> opportunities to invest in</p>
+    <p class="promotion"><%= number_to_currency(@total_amount, precision: 0) %> in loans funded!</p>
+    <p class="promotion"> Log in to find out more!</p>
     <% @funded_active_loans.each do |active_loan| %>
       <div class="one-active-loan">
       <% relevant_investments = Investment.where(active_loan_id: active_loan.id) %>
