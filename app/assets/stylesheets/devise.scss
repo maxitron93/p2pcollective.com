@@ -1,0 +1,142 @@
+/*****************************************/
+/*************SETUP***************/
+/*****************************************/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  // border: 0.2px solid rgb(255, 151, 151);
+  border: 0.2px solid transaprent;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  color: #4F4F4F;
+}
+
+body {
+  background: #F2F2F2;
+}
+/*****************************************/
+/*************HEADER***************/
+/*****************************************/
+
+header {
+  background: #2F80ED;
+}
+.logo {
+  display: inline-block;
+  width: 49.5%;
+  padding: 20px 0px 20px 3%;
+  font-size: 200%;
+  color: #F2F2F2;
+}
+
+/*****************************************/
+/*************BACK BUTTON***************/
+/*****************************************/
+.back {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back a {
+  font-size: 150%;
+  text-decoration: none;
+  padding: 5px 15px;
+  background: #2F80ED;
+  color: #F2F2F2;
+  border-radius: 7px;
+}
+
+/*****************************************/
+/*************INPUT AREA SECTION***************/
+/*****************************************/
+.section-input-area {
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #2F80ED; 
+  border-radius: 7px;
+}
+
+/*****************************************/
+/*************FOMR***************/
+/*****************************************/
+h2 {
+  width: 100%;
+  left: 50%;
+  font-size: 150%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 100%;
+}
+
+input {
+  width: 100%;
+  margin: 5px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #4F4F4F;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.actions {
+  display: inline-block;  
+}
+
+input[type="submit"] {
+  width: 80px;
+  margin: 0 auto;
+  background: #2F80ED;
+  border: none;
+  border-radius: 2px;
+  color: #F2F2F2;
+  padding: 3px 15px;
+  font-size: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+form a {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 100%;
+  background: #2F80ED;
+  border: none;
+  border-radius: 2px;
+  color: #F2F2F2;
+  padding: 3px 15px;
+  font-size: 100%;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.buttons {
+  width: 200px;
+  margin: 0 auto;
+}
+
+/*****************************************/
+/*************FOOTER***************/
+/*****************************************/
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 80px;
+  background: #2F80ED;
+  text-align: center;
+}

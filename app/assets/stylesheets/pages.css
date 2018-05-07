@@ -54,17 +54,22 @@ header span {
 header span a {
   display: inline-block;
   font-size: 120%;
-  padding: 3px 10px 3px 10px;
+  padding: 5px 0px;
   text-align: center;
   width: 90%;
   background: #F2F2F2;
   color: #4F4F4F;
-  border-radius: 5px; 
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 /*****************************************/
 /*************ACTIVE LOAN***************/
 /*****************************************/
+.promotion:nth-child(1) {
+  margin-top: 20px;
+}
+
 .promotion {
   text-align: center;
   text-align: center;
