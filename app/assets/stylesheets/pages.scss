@@ -1,3 +1,141 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*****************************************/
+/*************SETUP***************/
+/*****************************************/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  // border: 1px solid rgb(255, 151, 151);
+  border: 1px solid transaprent;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: #F2F2F2;
+}
+
+section {
+  width: 100%;
+}
+
+/*****************************************/
+/*************HEADER***************/
+/*****************************************/
+header {
+  background: #2F80ED;
+}
+.logo {
+  display: inline-block;
+  width: 49.5%;
+  padding: 0px 0px 0px 3%;
+  font-size: 200%;
+  color: #F2F2F2;
+}
+
+.nav-icon {
+  display: inline-block;
+  width: 49.5%;
+  text-align: end;
+  padding: 0px 3% 0px 0px;
+  font-size: 200%;
+  color: #F2F2F2;
+}
+
+header span {
+  display: inline-block;
+  width: 49.5%;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  
+}
+
+header span a {
+  display: inline-block;
+  font-size: 120%;
+  padding: 3px 10px 3px 10px;
+  text-align: center;
+  width: 90%;
+  background: #F2F2F2;
+  color: #4F4F4F;
+  border-radius: 5px; 
+}
+
+/*****************************************/
+/*************ACTIVE LOAN***************/
+/*****************************************/
+.one-active-loan {
+  position: relative;
+  width: 85%;
+  margin: 30px auto;
+  border-radius: 10px;
+  color: #F2F2F2;
+}
+
+.one-active-loan:nth-child(even) {
+  background: #4B8A66;
+}
+
+.one-active-loan:nth-child(odd) {
+  background: rgb(240, 135, 43);
+}
+
+.one-active-loan h3 {
+  position: relative;
+  top: -5px;
+  display: inline-block;
+  padding-left: 10px;
+  width: 69.5%;
+  font-size: 150%;
+}
+
+.interest-rate {
+  display: inline-block;
+  width: 29.5%;
+  font-size: 200%;
+}
+
+.loan-amount {
+  display: inline-block;
+  padding: 10px 0px 10px 10px;
+  width: 30%;
+  font-size: 120%;
+}
+
+.funded-percentage {
+  display: inline-block;
+  padding: 10px 0px 10px 5px;
+  width: 69%;
+  font-size: 120%;
+}
+
+.loan-term {
+  display: inline-block;
+  padding: 10px 0px 10px 10px;
+  width: 30%;
+  font-size: 100%;
+}
+
+.employment {
+  display: inline-block;
+  padding: 10px 0px 10px 5px;
+  width: 69%;
+  font-size: 100%;
+}
+
+
+/*****************************************/
+/*************FOOTER***************/
+/*****************************************/
+
+footer {
+  bottom: 0px;
+  width: 100%;
+  height: 80px;
+  background: #2F80ED;
+}

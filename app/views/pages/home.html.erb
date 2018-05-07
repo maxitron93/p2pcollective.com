@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<p>Temporarily here but needs to be moved to nav bar</p>
+<p><%= link_to "How this works", how_this_works_path %></p>
+<p><%= link_to "Borrow money", borrow_money_path %></p>
+<p><%= link_to "Become an investor", become_an_investor_path %></p>
+<p><%= link_to "About us", about_us_path %></p>
+<p><%= link_to "Contact us", contact_us_path %></p>
+
+<section>
+  
+    <% @funded_active_loans.each do |active_loan| %>
+      <div class="one-active-loan">
+      <% relevant_investments = Investment.where(active_loan_id: active_loan.id) %>
+        <% amount_invested_so_far = 0.0 %>
+        <% relevant_investments.each do |investment| %>
+        <% amount_invested_so_far += investment.opening_balance %>
+      <% end %>
+      <% funded_percentage = amount_invested_so_far / active_loan.opening_balance %>
+      <h3><%= active_loan.category %></h3>
+      <p class="interest-rate"><%= active_loan.interest_rate %>%</p>
+      <p class="loan-amount"><%= number_to_currency((active_loan.opening_balance / 100), precision: 0) %></p>
+      <p class="funded-percentage"><%= (funded_percentage * 100).to_i %>% funded</p>
+      <p class="loan-term"><%= active_loan.loan_term %> months</p>
+      <p class="employment">Employmed as <%= active_loan.employment_type %></p>
+       </div>
+    <% end %>
+ 
+</section>

@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>P2pcollectiveCom</title>
+    <title>p2pcollectiveCom</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
   </head>
 
   <body>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Register", new_user_registration_path %>
+    <section class="header-section">
+      <header>
+        <p class="logo">p2pcollective</p>
+        <p class="nav-icon">ICON</p>
+        <span><%= link_to "Login", new_user_session_path %></span>
+        <span><%= link_to "Register", new_user_registration_path %></span>
+      </header>
+    </section>
+    
+    
     <%= yield %>
+
+    <section class="footer-section">
+      <footer>
+        
+      </footer>
+    </section>
   </body>
 </html>
