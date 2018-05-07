@@ -13,8 +13,12 @@
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
   background: #F2F2F2;
+  padding-bottom: 80px;
 }
+
 
 /*****************************************/
 /*************HEADER***************/
