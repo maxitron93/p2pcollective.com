@@ -1,101 +1,105 @@
-<%= form_with(model: loan_application, local: true, multipart: true) do |form| %>
-  <% if loan_application.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(loan_application.errors.count, "error") %> prohibited this loan_application from being saved:</h2>
+<section class="loan-form">
+  
+  <%= form_with(model: loan_application, local: true, multipart: true) do |form| %>
+    <% if loan_application.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(loan_application.errors.count, "error") %> prohibited this loan_application from being saved:</h2>
 
-      <ul>
-      <% loan_application.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% loan_application.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, id: :loan_application_first_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, id: :loan_application_last_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :street_address %>
+      <%= form.text_field :street_address, id: :loan_application_street_address %>
+    </div>
+
+    <div class="field">
+      <%= form.label :city %>
+      <%= form.text_field :city, id: :loan_application_city %>
+    </div>
+
+    <div class="field">
+      <%= form.label :state %>
+      <%= form.text_field :state, id: :loan_application_state %>
+    </div>
+
+    <div class="field">
+      <%= form.label :postcode %>
+      <%= form.number_field :postcode, id: :loan_application_postcode %>
+    </div>
+
+    <div class="field">
+      <%= form.label :"Loan amount (up to $50,000)" %>
+      $ <%= form.number_field :loan_amount, id: :loan_application_loan_amount %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Loan term (up to 60 months)" %>
+      <%= form.number_field :loan_term, id: :loan_application_loan_term %>
+    </div>
+
+    <div class="field">
+      <%= form.label :purpose %>
+      <%= form.text_area :purpose, id: :loan_application_purpose, rows: 5 %>
+    </div>
+
+    <div class="field">
+    <%= form.label :loan_category_id %>
+    <%= form.select(:loan_category_id, options_from_collection_for_select(LoanCategory.all, :id, :label)) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :employment_type_id %>
+      <%= form.select(:employment_type_id, options_from_collection_for_select(EmploymentType.all, :id, :label)) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :weekly_income %>
+      $ <%= form.number_field :weekly_income, id: :loan_application_weekly_income %>
+    </div>
+
+    <div class="field">
+      <%= form.label :weekly_expenses %>
+      $ <%= form.number_field :weekly_expenses, id: :loan_application_weekly_expenses %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Months unemployed in the last 2 years" %>
+      <%= form.number_field :work_gap_months, id: :loan_application_work_gap_months %>
+    </div>
+
+    <div class="field">
+      <%= form.label :license_data %>
+      <%= form.hidden_field :license, value: @loan_application.cached_license_data %>
+      <%= form.file_field :license %>
+    </div>
+
+
+    <div class="field">
+    <%= form.label :pay_slip_data %>
+      <%= form.hidden_field :pay_slip, value: @loan_application.cached_pay_slip_data %>
+      <%= form.file_field :pay_slip %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Save' %>
+      <%= form.submit 'Submit', name: 'submit' %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :loan_application_first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :loan_application_last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :loan_amount %>
-    <%= form.number_field :loan_amount, id: :loan_application_loan_amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :loan_term %>
-    <%= form.number_field :loan_term, id: :loan_application_loan_term %>
-  </div>
-
-  <div class="field">
-    <%= form.label :purpose %>
-    <%= form.text_area :purpose, id: :loan_application_purpose %>
-  </div>
-
-  <div class="field">
-  <%= form.label :loan_category_id %>
-  <%= form.select(:loan_category_id, options_from_collection_for_select(LoanCategory.all, :id, :label)) %>
-  </div>
-
-   <div class="field">
-    <%= form.label :street_address %>
-    <%= form.text_field :street_address, id: :loan_application_street_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :loan_application_city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state, id: :loan_application_state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :postcode %>
-    <%= form.number_field :postcode, id: :loan_application_postcode %>
-  </div>
-
-  <div class="field">
-    <%= form.label :employment_type_id %>
-    <%= form.select(:employment_type_id, options_from_collection_for_select(EmploymentType.all, :id, :label)) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :weekly_income %>
-    <%= form.number_field :weekly_income, id: :loan_application_weekly_income %>
-  </div>
-
-  <div class="field">
-    <%= form.label :weekly_expenses %>
-    <%= form.number_field :weekly_expenses, id: :loan_application_weekly_expenses %>
-  </div>
-
-  <div class="field">
-    <%= form.label :work_gap_months %>
-    <%= form.number_field :work_gap_months, id: :loan_application_work_gap_months %>
-  </div>
-
-  <div class="field">
-    <%= form.label :license_data %>
-    <%= form.hidden_field :license, value: @loan_application.cached_license_data %>
-    <%= form.file_field :license %>
-  </div>
-
-
-  <div class="field">
-  <%= form.label :pay_slip_data %>
-    <%= form.hidden_field :pay_slip, value: @loan_application.cached_pay_slip_data %>
-    <%= form.file_field :pay_slip %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Save' %>
-    <%= form.submit 'Submit', name: 'submit' %>
-  </div>
-<% end %>
+</section>

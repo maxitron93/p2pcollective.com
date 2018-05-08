@@ -1,6 +1,9 @@
-<h1>Editing Loan Application</h1>
+<section class="section-loan-application">
+  <h2>Edit loan application</h2>
 
-<%= link_to 'Show', @loan_application %> |
-<%= link_to "Back", :back %> <strong>Link to previous visited page</strong>
+  <div class="back-button">
+    <%= link_to "Back", my_loan_applications_with_status_path(status: "saved") %>    
+  </div>
 
-<%= render 'form', loan_application: @loan_application %>
+  <%= render 'form', loan_application: @loan_application %>
+</section>

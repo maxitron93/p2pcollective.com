@@ -386,6 +386,97 @@ textarea:focus, input:focus{
 }
 
 /*****************************************/
+/*************NEW/EDIT LOAN APPLICAION***************/
+/*****************************************/
+.section-loan-application {
+  margin: 40px auto 110px auto;
+  width: 85%;
+}
+
+.section-loan-application h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+.section-loan-application .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0 10px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-loan-application .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.loan-form {
+  position: relative;
+}
+
+.loan-form .field {
+  margin: 15px 0;
+}
+
+.loan-form label {
+  display: block;
+  font-size: 110%;
+}
+
+.loan-form input[type="text"],
+.loan-form input[type="number"],
+.loan-form select {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #4F4F4F;
+  width: 90%;
+  font-size: 110%;
+}
+
+#loan_application_loan_amount,
+#loan_application_weekly_income,
+#loan_application_weekly_expenses{
+  width: 50%;
+}
+
+.loan-form select {
+  width: 50%;
+}
+
+.loan-form textarea {
+  background: none;
+  border: 1px solid #4F4F4F;
+  width: 90%;
+  font-size: 110%;
+}
+
+.loan-form .actions {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 250px;
+}
+
+.loan-form input[value="Save"],
+.loan-form input[value="Submit"] {
+  background: #2F80ED;
+  border: none;
+  margin-left: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 3px 8px;
+  width: 100px;
+  font-size: 120%;
+  color: #F2F2F2;
+}
+
+/*****************************************/
 /*************FOOTER***************/
 /*****************************************/
 footer {

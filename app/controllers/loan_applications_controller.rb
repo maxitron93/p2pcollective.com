@@ -6,21 +6,29 @@ class LoanApplicationsController < ApplicationController
   def index
     @loan_applications = LoanApplication.where(user_id: current_user.id).where(status: params[:status])
     @status = params[:status]
+
+    render layout: "portfolios"
   end
 
   # GET /loan_applications/1
   # GET /loan_applications/1.json
   def show
     @status = params[:status]
+
+    render layout: "portfolios"
   end
 
   # GET /loan_applications/new
   def new
     @loan_application = LoanApplication.new
+
+    render layout: "portfolios"
   end
 
   # GET /loan_applications/1/edit
   def edit
+
+    render layout: "portfolios"
   end
 
   # POST /loan_applications

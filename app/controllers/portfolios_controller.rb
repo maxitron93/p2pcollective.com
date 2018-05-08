@@ -53,7 +53,7 @@ class PortfoliosController < ApplicationController
         transaction_type: "principal"
       ])
 
-      redirect_to root_path, notice: "You do not have successfully withdrawn $#{@amount}."
+      redirect_to root_path, notice: "You have successfully withdrawn $#{@amount}."
     else
       redirect_to withdraw_cash_path, notice: "You do not have enough cash in your account to withdraw $#{@amount}."
     end

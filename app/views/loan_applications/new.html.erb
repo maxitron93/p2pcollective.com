@@ -1,5 +1,9 @@
-<h1>New Loan Application</h1>
+<section class="section-loan-application">
+  <h2>New loan application</h2>
 
-<%= link_to "Back", my_loan_applications_path %> <strong>Link to my_loan_applications_path </strong>
-
-<%= render 'form', loan_application: @loan_application %>
+  <div class="back-button">
+    <%= link_to "Back", my_loan_applications_path %>    
+  </div>
+  
+  <%= render 'form', loan_application: @loan_application %>
+</section>
