@@ -28,6 +28,7 @@ class ActiveLoansController < ApplicationController
       end
     end
     
+    render layout: "portfolios"
   end
 
   def approve
@@ -62,6 +63,8 @@ class ActiveLoansController < ApplicationController
 
   def show
     @active_loan = ActiveLoan.find(params[:id])
+
+    render layout: "portfolios"
   end
 
   def invest

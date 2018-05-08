@@ -719,6 +719,88 @@ header {
   text-align: center;
 }
 
+/*****************************************/
+/************ACTIVE LOAN SHOW PAGE************/
+/*****************************************/
+.section-one-active-loan {
+  width: 80%;
+  margin: 40px auto 110px auto;
+}
+
+.section-one-active-loan h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+.section-one-active-loan .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0 5px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-one-active-loan .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.section-one-active-loan .amount-input-area {
+  border: 1px solid #2F80ED;
+  border-radius: 10px;
+  margin: 20px auto 5px auto;
+  padding: 10px;
+  width: 80%;
+  font-size: 120%;
+}
+
+.section-one-active-loan .amount-input-area label {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0;
+  font-size: 120%;
+}
+
+.section-one-active-loan .amount-input-area input[type="number"] {
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #4F4F4F;
+}
+
+.section-one-active-loan .amount-input-area input[type="submit"] {
+  display: inline-block;
+  padding: 8px 0;
+  margin: 15px 0 8px 0;
+  font-size: 100%;
+  width: 70%;
+  background: #2F80ED;
+  border: none;
+  border-radius: 4px;
+  color: #F2F2F2;
+}
+
+.section-one-active-loan .one-field {
+  display: inline-block;
+  margin: 15px 0;
+  font-size: 110%;
+  width: 49%
+}
+
+.section-one-active-loan .fullwidth {
+  width: 100%;
+}
+
+.section-one-active-loan .one-field p {
+  padding: 2px 0;
+}
 
 /*****************************************/
 /*************FOOTER***************/

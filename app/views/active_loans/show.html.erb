@@ -1,36 +1,106 @@
-<h1>Active Loan ID: <%= @active_loan.id %></h1>
+<section class="section-one-active-loan">
+  
+  <h2>Loan ID: <%= @active_loan.id %> (<%= @active_loan.status %>)</h2>
 
-<p id="notice"><%= notice %></p>
+  <div class="back-button">
+    <%= link_to "Back", my_active_loans_index_path(status: @active_loan.status) %>    
+  </div>
 
-<%= link_to "Back", :back %> <strong>Link to previous visited page</strong>
-
-<% if @active_loan.status == "unfunded" %>
-  <%= form_tag investment_path(id: @active_loan.id), method: :post do %>
-    <p><%= label_tag 'Enter investment amount' %></p>
-    <p><%= number_field_tag 'investment_amount' %></p>
-    <p><%= submit_tag 'Commit Investment' %></p>
+  <%# if @active_loan.status == "unfunded" && @active_loan.user_id != current_user.id %>
+  <% if @active_loan.status == "unfunded" %>
+    <div class="amount-input-area">
+      <%= form_tag investment_path(id: @active_loan.id), method: :post do %>
+        <%= label_tag 'Enter investment amount' %>
+        $ <%= number_field_tag 'investment_amount' %>
+        <%= submit_tag 'Commit Investment' %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
 
-<% if @active_loan.status == "funded" && @active_loan.user_id == current_user.id %>
-  <%= form_tag repay_loan_confirmation_path(id: @active_loan.id), method: :post do %>
-    <p><%= label_tag 'Enter repayment amount' %></p>
-    <p><%= number_field_tag 'repayment_amount' %></p>
-    <p><%= submit_tag 'Make repayment' %></p>
+  <% if @active_loan.status == "funded" && @active_loan.user_id == current_user.id %>
+    <div class="amount-input-area">
+      <%= form_tag repay_loan_confirmation_path(id: @active_loan.id), method: :post do %>
+        <%= label_tag 'Enter repayment amount' %>
+        $ <%= number_field_tag 'repayment_amount' %>
+        <%= submit_tag 'Make repayment' %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
 
-<p>Loan amount: <%= @active_loan.opening_balance / 100 %></p>
-<% if @status == "unfunded" %>
-  <p>Committed Investments: <strong><%= "Needs to be calculated from total of Investments" %></strong></p>
-  <p>Investment opportunitiy remaing: <strong><%= "Calculation" %></strong></p>
-<% end %>
-<p>Loan term: <%= @active_loan.loan_term %> months</p>
-<p>Purpose: <%= @active_loan.purpose %></p>
-<p>Category: <%= @active_loan.category %></p>
-<p>Interest rate: <%= @active_loan.interest_rate %>%</p>
-<p>Monthly repayment: $<%= @active_loan.periodic_repayment_amount %></p>
-<p>Repayment capacity: $<%= @active_loan.repayment_capacity / 100 %></p>
-<p>Employment type: <%= @active_loan.employment_type %></p>
-<p>Work gap months: <%= @active_loan.work_gap_months %></p>
-<p>Created: <%= time_ago_in_words(@active_loan.created_at) %> ago</p>
+  <div class="one-field">
+    <p><strong>Loan amount:</strong></p>
+    <%= number_to_currency(@active_loan.opening_balance / 100, percision: 2) %>
+  </div>
+
+  <% if @active_loan.status == "funded" %>
+
+    <% total_repaid = 0 %>
+    <% repayments = Repayment.where(active_loan_id: @active_loan.id) %>
+    <% repayments.each do |repayment| %>
+    <% total_repaid += repayment.amount %>
+    <% end %>
+    <% percent_repaid = ((total_repaid.to_f / @active_loan.opening_balance.to_f) * 100).round(2) %>
+    <div class="one-field">
+      <p><strong>Percent repaid:</strong></p>
+      %<%= percent_repaid %>
+    </div>
+  <% else %>
+
+    <% total_funded = 0 %>
+    <% investments = Investment.where(active_loan_id: @active_loan.id) %>
+    <% investments.each do |investment| %>
+    <% total_funded += investment.opening_balance %>
+    <% end %>
+    <% percent_funded = ((total_funded.to_f / @active_loan.opening_balance.to_f) * 100).round(2) %>
+    <div class="one-field"> 
+      <p><strong>Percent funded:</strong></p>
+      %<%= percent_funded %>
+    </div>
+  <% end %>
+
+  <div class="one-field">
+    <p><strong>Interest rate:</strong></p>
+    %<%= @active_loan.interest_rate %>
+  </div>
+
+  <div class="one-field">
+    <p><strong>Loan term (months):</strong></p>
+    <%= @active_loan.loan_term %>
+  </div>
+
+  <div class="one-field">
+    <p><strong>Monthly repayment amount:</strong></p>
+    <%= number_to_currency(@active_loan.periodic_repayment_amount, percision: 2) %>
+  </div>
+
+  <div class="one-field">
+    <p><strong>Loan established:</strong></p>
+    <%= @active_loan.created_at.strftime("%d-%b") %>
+  </div>
+
+  <div class="one-field">
+    <p><strong>Loan category:</strong></p>
+    <%= @active_loan.category %>
+  </div>
+
+  <div class="one-field fullwidth">
+    <p><strong>Purpose:</strong></p>
+    <%= @active_loan.purpose %>
+  </div>
+
+  <div class="one-field fullwidth">
+    <p><strong>Borrower employment type:</strong></p>
+    <%= @active_loan.employment_type %>
+  </div>
+
+  <div class="one-field fullwidth">
+    <p><strong>Borrower repayment capacity:</strong></p>
+    <%= number_to_currency(@active_loan.repayment_capacity / 100, percision: 2) %>
+  </div>
+
+  <div class="one-field fullwidth">
+    <p><strong>Months unemployed in the last 2 years:</strong></p>
+    <%= @active_loan.work_gap_months %>
+  </div>
+
+</section>
