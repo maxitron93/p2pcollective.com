@@ -558,6 +558,65 @@ header {
   text-align: center;
 }
 
+.section-application-index .view-application a {
+  margin-top: 10px;
+  margin-right: 20px;
+  display: inline-block;
+  width: 100px;
+  font-size: 100%;
+  text-decoration: none;
+  padding: 3px 0;
+  background: #2F80ED;
+  border: none;
+  border-radius: 5px;
+  color: #F2F2F2;
+  text-align: center;
+}
+
+/*****************************************/
+/*********VIEW ONE APPLICAION SECTION*********/
+/*****************************************/
+.view-one-loan {
+  margin: 20px auto 110px auto;
+}
+
+.view-one-loan h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+.view-one-loan .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0 5px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.view-one-loan .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.view-one-loan .one-loan-application {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.view-one-loan .one-field {
+  margin: 15px 0;
+  font-size: 110%;
+}
+
+.view-one-loan .one-field p {
+  padding: 2px 0;
+}
+
 /*****************************************/
 /*************FOOTER***************/
 /*****************************************/

@@ -27,6 +27,10 @@
           <%= link_to "Edit",  edit_loan_application_path(id: loan_application.id) %>
           <%= link_to "Delete", loan_application_path(id: loan_application.id), data: { confirm: "Are you sure?" }, method: :delete %>
         </div>
+      <% elsif @status == "being assessed" %>
+        <div class="view-application">
+          <%= link_to "View",  loan_application_path(id: loan_application.id) %>
+        </div>
       <% end %>
     </div>
   <% end %>
