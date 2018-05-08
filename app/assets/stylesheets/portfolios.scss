@@ -290,6 +290,16 @@ header {
   text-align: center;
 }
 
+.section-my-loans p:nth-last-of-type(1) a {
+  background: rgb(116, 0, 0);
+}
+
+.section-my-loans .user-note {
+  color: rgb(116, 0, 0);
+  width: 65%;
+  margin: -20px auto 0 auto;
+}
+
 /*****************************************/
 /*************NEW CHARGE***************/
 /*****************************************/

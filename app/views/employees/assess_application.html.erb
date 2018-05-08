@@ -115,7 +115,8 @@
     <% end %>
 
     <div class="approve-button">
-      <%= link_to "Approve", approve_application_path(id: @loan_application.id), method: :post %>    
+      <%= link_to "Approve", approve_active_loan_path(id: @loan_application.id), method: :post %>
+          
     </div>
   
   </div>

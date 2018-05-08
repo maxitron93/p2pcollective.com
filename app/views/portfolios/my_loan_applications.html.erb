@@ -7,12 +7,14 @@
 
   <p class="loan-button"><%= link_to 'Being assessed', my_loan_applications_with_status_path(status: "being assessed") %></p>
 
-  <p class="loan-button"><%= link_to "Awaiting your approval",my_active_loans_index_path(status: "pending approval") %></p>
-
   <p class="loan-button"><%= link_to "Awaiting funding", my_active_loans_index_path(status: "unfunded") %></p>
 
-  <p class="loan-button"><%= link_to "Awaiting assessment", awaiting_assessment_path %></p>
-
   <p class="back-button"><%= link_to "Back", root_path %></p>
+
+  <p class="loan-button">
+    <%= link_to "Awaiting assessment", awaiting_assessment_path %> 
+  </p>
+
+  <div class="user-note"><strong>Note:</strong> For the purpose of this project, this link is available to all users so that they can assess and approve their own applications. In reality, that job would be reserved for p2pcollective employees.</div>
 
 </section>
