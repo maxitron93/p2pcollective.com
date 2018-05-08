@@ -628,6 +628,99 @@ header {
 }
 
 /*****************************************/
+/*********MT ACTIVE LOANS SECTION*********/
+/*****************************************/
+.section-my-active-loans {
+  margin: 30px auto 110px auto;
+}
+
+.section-my-active-loans h2 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 200%;
+}
+
+.section-my-active-loans .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-my-active-loans .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.section-my-active-loans .whole-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-my-active-loans .column-heading {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: -10px;
+  border-bottom: 1px solid #2F80ED;
+  font-size: 110%;
+}
+
+.section-my-active-loans .one-active-loan {
+  width: 90%;
+  margin: 25px auto 0 auto;
+  font-size: 110%;
+}
+
+.section-my-active-loans .column-created-at {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-active-loans .column-purpose {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-active-loans .column-amount {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-active-loans .fourth-column {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-active-loans .view-active-loan a {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 100%;
+  width: 130px;
+  text-decoration: none;
+  padding: 3px 0;
+  background: #2F80ED;
+  border: none;
+  border-radius: 5px;
+  color: #F2F2F2;
+  text-align: center;
+}
+
+
+/*****************************************/
 /*************FOOTER***************/
 /*****************************************/
 footer {

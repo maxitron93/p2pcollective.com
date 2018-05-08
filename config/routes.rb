@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   # Routes for employee accounts
   get '/awaiting_assessment', to: 'employees#awaiting_assessment', as: 'awaiting_assessment'
   get '/assess_application/:id', to: 'employees#assess_application', as: 'assess_application'
-  post '/approve_application/:id', to: 'employees#approve_application', as: 'approve_application' 
 
   # Routes to navigate loan applications before they become live 
   get '/my_loan_applications/:status', to: 'loan_applications#index', as: 'my_loan_applications_with_status'

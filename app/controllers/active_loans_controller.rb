@@ -11,6 +11,8 @@ class ActiveLoansController < ApplicationController
     @status = params[:status]
     
     @active_loans = ActiveLoan.where(user_id: current_user.id).where(status: params[:status])
+
+    render layout: "portfolios"
   end
 
   def my_investments

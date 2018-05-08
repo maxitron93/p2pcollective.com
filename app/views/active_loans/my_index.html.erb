@@ -1,36 +1,67 @@
-<h1>My Loans</h1>
-
-<p id="notice"><%= notice %></p>
-
-<% if @status == "funded" %>
-<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
-<p><%= @status %></p>
-<% else %>
-<%= link_to "Back", my_loan_applications_path %> <strong>Link to my_loan_applications_path </strong>
-<p><%= @status %></p>
-<% end %>
-
-<% @active_loans.each do |active_loan| %>
-  <br>
-  <h3><%= link_to "Loan by #{User.find(active_loan.user_id).email}", show_active_loan_path(id: active_loan.id) %></h3>
-
-  <p>Loan amount: <%= active_loan.opening_balance / 100 %></p>
+<section class="section-my-active-loans">
   <% if @status == "unfunded" %>
-    <p>Committed Investments: <strong><%= "Needs to be calculated from total of Investments" %></strong></p>
-    <p>Investment opportunitiy remaing: <strong><%= "Calculation" %></strong></p>
-  <% end %>
-  <p>Loan term: <%= active_loan.loan_term %> months</p>
-  <p>Purpose: <%= active_loan.purpose %></p>
-  <p>Category: <%= active_loan.category %></p>
-  <p>Interest rate: <%= active_loan.interest_rate %>%</p>
-  <p>Monthly repayment: $<%= active_loan.periodic_repayment_amount %></p>
-  <p>Repayment capacity: $<%= active_loan.repayment_capacity / 100 %></p>
-  <p>Employment type: <%= active_loan.employment_type %></p>
-  <p>Work gap months: <%= active_loan.work_gap_months %></p>
-  <p>Created: <%= time_ago_in_words(active_loan.created_at) %> ago</p>
-  
-  <% if @status == "pending approval" %>
-    <%= link_to "Go live!", approve_active_loan_path(id: active_loan.id), method: :post %>
+    <h2>My unfunded loans</h2>
+  <% else %>
+    <h2>My outstanding loans</h2>
   <% end %>
 
-<% end %>
+  <div class="back-button">
+    <% if @status == "funded" %>
+    <%= link_to "Back", root_path %>
+    <% else %>
+      <%= link_to "Back", my_loan_applications_path %>
+    <% end %>
+  </div>
+
+  <div class="column-heading whole-table">
+    <div class="column-created-at">date created</div>
+    <div class="column-purpose">loan purpose</div>
+    <div class="column-amount">amount</div>
+    <div class="fourth-column">
+      <% if @status == "funded" %>
+      percent repaid
+      <% else %>
+      percent funded
+      <% end %>
+    </div>
+  </div>
+
+
+  <% @active_loans.each do |active_loan| %>
+    
+    <div class="one-active-loan">
+      
+      <div class="column-created-at"><%= active_loan.created_at.strftime("%d-%b") %></div>
+      <div class="column-purpose"><%= active_loan.category %></div>
+      <div class="column-amount"><%= number_to_currency(active_loan.opening_balance / 100, percision: 2) %></div>
+      <div class="fourth-column">
+      <% if @status == "funded" %>
+
+        <% total_repaid = 0 %>
+        <% repayments = Repayment.where(active_loan_id: active_loan.id) %>
+        <% repayments.each do |repayment| %>
+        <% total_repaid += repayment.amount %>
+        <% end %>
+        <% percent_repaid = ((total_repaid.to_f / active_loan.opening_balance.to_f) * 100).round(2) %>
+        %<%= percent_repaid %>
+      <% else %>
+
+        <% total_funded = 0 %>
+        <% investments = Investment.where(active_loan_id: active_loan.id) %>
+        <% investments.each do |investment| %>
+        <% total_funded += investment.opening_balance %>
+        <% end %>
+        <% percent_funded = ((total_funded.to_f / active_loan.opening_balance.to_f) * 100).round(2) %>
+        %<%= percent_funded %>
+      <% end %>
+      </div>
+
+      <div class="view-active-loan">
+          <%= link_to "View",  show_active_loan_path(id: active_loan.id) %>
+      </div>
+
+    </div>
+
+  <% end %>
+    
+</section>
