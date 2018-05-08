@@ -1,7 +1,20 @@
-<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+<section class="section-add-withdraw-cash">
 
-<%= form_tag withdraw_confirmation_path, method: :get do %>
-  <p>Enter amount:</p>
-  <%= text_field_tag 'amount' %>
-  <%= submit_tag 'Withdraw cash' %>
-<% end %>
+    
+  <div class="input-area">
+
+    <h2 class="heading">Withdraw cash</h2>
+    
+    <%= form_tag withdraw_confirmation_path, method: :post do %>
+      <p>Enter amount:</p>
+      $ <%= text_field_tag 'amount' %>
+      <%= submit_tag 'Withdraw cash' %>
+    <% end %>
+
+    <div class="back-button">
+      <%= link_to "Back", root_path %>
+    </div>
+  
+  </div>
+
+</section>

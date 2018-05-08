@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   #Routes for portfolios pages
   get '/add_cash', to: 'portfolios#add_cash', as: 'add_cash'
   get '/withdraw_cash', to: 'portfolios#withdraw_cash', as: 'withdraw_cash'
-  get '/withdraw_confirmation', to: 'portfolios#withdraw_confirmation', as: 'withdraw_confirmation'
+  post '/withdraw_confirmation', to: 'portfolios#withdraw_confirmation', as: 'withdraw_confirmation'
   
   get '/account_history/:id', to: 'portfolios#account_history', as: 'account_history'
 

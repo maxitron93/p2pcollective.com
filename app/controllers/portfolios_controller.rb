@@ -52,6 +52,8 @@ class PortfoliosController < ApplicationController
         to_account_balance: (retrieve_balance(account_id("Bank account")).to_i + (@amount.to_i * 100)),
         transaction_type: "principal"
       ])
+
+      redirect_to root_path, notice: "You do not have successfully withdrawn $#{@amount}."
     else
       redirect_to withdraw_cash_path, notice: "You do not have enough cash in your account to withdraw $#{@amount}."
     end
