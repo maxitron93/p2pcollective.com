@@ -41,7 +41,7 @@
   
 
   <div class="outstanding-account account-div">
-    <p class="account"><%= link_to "Outstanding loans:", account_history_path(id: @outstanding_loans_account_id) %></p> 
+    <p class="account"><%= link_to "Outstanding loans", account_history_path(id: @outstanding_loans_account_id) %></p> 
     <p class="account-balance"><%= number_to_currency(@outstanding_loans, percision: 2) %></p>
   </div>
 

@@ -14,7 +14,8 @@
 
 body {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 650px;
   background: #F2F2F2;
   padding-bottom: 80px;
 }
@@ -43,7 +44,7 @@ header {
   width: 70%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
   padding: 20px;
   border: 1px solid #2F80ED; 
   border-radius: 7px;

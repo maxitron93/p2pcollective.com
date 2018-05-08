@@ -53,6 +53,16 @@ header {
 }
 
 /*****************************************/
+/*************NOTICES***************/
+/*****************************************/
+#notice {
+  text-align: center;
+  margin-top: 25px;
+  color: green;
+  margin-bottom: -20px;
+}
+
+/*****************************************/
 /*************ACCOUNTS SECTION***************/
 /*****************************************/
 .section-accounts {
@@ -60,34 +70,96 @@ header {
   margin: 0 auto;
 }
 
-.account-div {
+.section-accounts .account-div {
   position: relative;
   margin: 40px 0 8px 0;
 }
 
-.interact-div:nth-last-child(1) {
+.section-accounts .interact-div:nth-last-child(1) {
   margin-bottom: 40px;
 }
 
-.account,
-.account a,
-.account-balance {
+.section-accounts .account,
+.section-accounts .account a,
+.section-accounts .account-balance {
   display: inline-block;
   font-size: 120%;
   text-decoration: none;
 }
 
-.account-balance {
+.section-accounts .account-balance {
   position: absolute;
   right: 10px;
   top: 4px;
 }
 
-.interact-div a {
+.section-accounts .interact-div a {
   text-decoration: none;
   font-size: 110%;
 }
 
+/*****************************************/
+/*************ACCOUNTS HISTORY SECTION***************/
+/*****************************************/
+.section-history-section h2 {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 200%;
+}
+
+.section-history-section .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 5px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-history-section .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.section-history-section .whole-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-history-section .column-heading {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #2F80ED;
+}
+
+.section-history-section .one-transaction {
+  width: 90%;
+  margin-top: 20px;
+}
+
+.section-history-section .column-date {
+  display: inline-block;
+  width: 35%;
+}
+
+.section-history-section .column-amount {
+  display: inline-block;
+  width: 35%;
+}
+
+.section-history-section .column-balance {
+  display: inline-block;
+  width: 28%;
+}
+
+.section-history-section .row-description p {
+  margin-top: 3px;
+  font-size: 80%;
+}
 /*****************************************/
 /*************FOOTER***************/
 /*****************************************/

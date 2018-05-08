@@ -1,70 +1,83 @@
-<h1>Account History</h1>
 
-<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+<section class="section-history-section">
+  
+  <h2><%= @acc_name %></h2>
 
-<h2><%= @acc_name %></h2>
+  <div class="back-button">
+    <%= link_to "Back", root_path %>
+  </div>
 
-<table>
-  <tr>
-    <th>date</th>
-    <th>amount</th>
-    <th>description</th>
-    <th>balance</th>
-  </tr>
+  <div class="column-heading whole-table">
+    <div class="column-date">date</div>
+    <div class="column-amount">amount</div>
+    <div class="column-balance">balance</div>
+  </div>
+
   <% @transactions.each do |transaction| %>
+    <div class="one-transaction whole-table">  
+      <%# Logic to cusomise the description based on the from_account %>
+      <% transaction_description = "Transfer of " %>
+      <% if transaction.from_account_id % 8 == 1 %>
+        <% transaction_description = "Deposit of " %>
+        <% from_account = "Credit Card "%>
+      <% elsif transaction.from_account_id % 8 == 2 %>
+        <% from_account = "Cash Accout "%>
+      <% elsif transaction.from_account_id % 8 == 3 %>
+        <% from_account = "Active Investments "%>
+      <% elsif transaction.from_account_id % 8 == 4 %>
+        <% from_account = "Pending Investments "%>
+      <% elsif transaction.from_account_id % 8 == 5 %>
+        <% from_account = "Distressed Investments " %>   
+      <% elsif transaction.from_account_id % 8 == 6 %>
+        <% from_account = "Outstanding Loans " %>
+      <% elsif transaction.from_account_id % 8 == 7 %>
+        <% from_account = "Defaulted Loans " %>
+      <% end %>
+
+      <%# Logic to cusomise the description based on the to_account %>
+      <% if transaction.to_account_id % 8 == 2 %>
+        <% to_account = "Cash Account"%>
+      <% elsif transaction.to_account_id % 8 == 3 %>
+        <% to_account = "Active Investments "%>
+      <% elsif transaction.to_account_id % 8 == 4 %>
+        <% to_account = "Pending Investments "%>
+      <% elsif transaction.to_account_id % 8 == 5 %>
+        <% to_account = "Distressed Investments " %>   
+      <% elsif transaction.to_account_id % 8 == 6 %>
+        <% to_account = "Outstanding Loans " %>
+      <% elsif transaction.to_account_id % 8 == 7 %>
+        <% to_account = "Defaulted Loans " %>
+      <% elsif transaction.to_account_id % 8 == 0 %>
+        <% transaction_description = "Withdrawl of " %>
+        <% to_account = "Bank Account " %>
+      <% end %>
+
+      <div class="column-date">
+        <%= transaction.created_at.strftime("%d-%b") %></td>
+      </div>
+
+      <div class="column-amount">
+        <% if transaction.from_account_id == @acc_id.to_i %>
+          <p>-<%= number_to_currency(transaction.amount / 100, percision: 2)%></p>
+        <% elsif transaction.to_account_id == @acc_id.to_i %>
+          <p><%= number_to_currency(transaction.amount / 100, percision: 2)%></p>
+        <% end %>
+      </div>
+
+      <div class="column-balance">
+        <% if transaction.from_account_id == @acc_id.to_i %>
+          <p><%= number_to_currency(transaction.from_account_balance / 100, percision: 2)%></p>
+        <% elsif transaction.to_account_id == @acc_id.to_i %>
+          <p><%= number_to_currency(transaction.to_account_balance / 100, percision: 2)%></p>
+        <% end %>
+      </div>
+
+      <div class="row-description">
+        <p><%= transaction_description %><%= number_to_currency(transaction.amount / 100, percision: 2) %> from <%= from_account %> to <%= to_account %></p>
+      </div>
     
-    <% transaction_description = "Transfer of $" %>
-    <% if transaction.from_account_id % 8 == 1 %>
-      <% transaction_description = "Deposit of $" %>
-      <% from_account = "Credit Card "%>
-    <% elsif transaction.from_account_id % 8 == 2 %>
-      <% from_account = "Cash Accout "%>
-    <% elsif transaction.from_account_id % 8 == 3 %>
-      <% from_account = "Active Investments "%>
-    <% elsif transaction.from_account_id % 8 == 4 %>
-      <% from_account = "Pending Investments "%>
-    <% elsif transaction.from_account_id % 8 == 5 %>
-      <% from_account = "Distressed Investments " %>   
-    <% elsif transaction.from_account_id % 8 == 6 %>
-      <% from_account = "Outstanding Loans " %>
-    <% elsif transaction.from_account_id % 8 == 7 %>
-      <% from_account = "Defaulted Loans " %>
-    <% end %>
-
-    <% if transaction.to_account_id % 8 == 2 %>
-      <% to_account = "Cash Account"%>
-    <% elsif transaction.to_account_id % 8 == 3 %>
-      <% to_account = "Active Investments "%>
-    <% elsif transaction.to_account_id % 8 == 4 %>
-      <% to_account = "Pending Investments "%>
-    <% elsif transaction.to_account_id % 8 == 5 %>
-      <% to_account = "Distressed Investments " %>   
-    <% elsif transaction.to_account_id % 8 == 6 %>
-      <% to_account = "Outstanding Loans " %>
-    <% elsif transaction.to_account_id % 8 == 7 %>
-      <% to_account = "Defaulted Loans " %>
-    <% elsif transaction.to_account_id % 8 == 0 %>
-      <% transaction_description = "Withdrawl of $" %>
-      <% to_account = "Bank Account " %>
-    <% end %>
-
-    <tr>
-      <td><%= transaction.created_at %></td>
-
-      <% if transaction.from_account_id == @acc_id.to_i %>
-        <td>-$<%= transaction.amount / 100%></td>
-      <% elsif transaction.to_account_id == @acc_id.to_i %>
-        <td>$<%= transaction.amount / 100 %></td>
-      <% end %>
-
-      <td><%= transaction_description %><%= transaction.amount / 100 %> from <%= from_account %> to <%= to_account %> </td>
-      
-      <% if transaction.from_account_id == @acc_id.to_i %>
-        <td>$<%= transaction.from_account_balance / 100 %></td>
-      <% elsif transaction.to_account_id == @acc_id.to_i %>
-        <td>$<%= transaction.to_account_balance / 100 %></td>
-      <% end %>
-
-    </tr>
+    </div>
+  
   <% end %>
-</table>
+  
+</section>
