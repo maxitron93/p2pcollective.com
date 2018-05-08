@@ -1,33 +1,35 @@
-<h1>Loan Applications</h1>
+<section class="section-application-index">
 
-<%= link_to "Back", my_loan_applications_path %> <strong>Link to my_loan_applications_path </strong>
+  <% if @status == "saved" %>
+    <h2>Saved loan applications</h2>
+  <% elsif @status == "being assessed" %>
+    <h2>Applications being assessed</h2>
+  <% end %>
+  
+  <div class="back-button">
+    <%= link_to "Back", my_loan_applications_path %>    
+  </div>
+  
+  <div class="column-heading whole-table">
+    <div class="column-created-at">date created</div>
+    <div class="column-purpose">loan purpose</div>
+    <div class="column-amount">amount</div>
+  </div>
 
-<p><%= @status %></p>
+  <% @loan_applications.each do |loan_application| %>
+    <div class="one-loan whole-table">
+      <div class="column-created-at"><%= loan_application.created_at.strftime("%d-%b") %></div>
+      <div class="column-purpose"><%= LoanCategory.find(loan_application.loan_category_id).label %></div>
+      <div class="column-amount"><%= number_to_currency(loan_application.loan_amount / 100, percision: 2) %></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Status</th>
-      <th>Loan amount</th>
-      <th>Loan term</th>
-      <th>Purpose</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <% if @status == "saved" %>
+        <div class="edit-or-destroy">
+          <%= link_to "Edit",  edit_loan_application_path(id: loan_application.id) %>
+          <%= link_to "Delete", loan_application_path(id: loan_application.id), data: { confirm: "Are you sure?" }, method: :delete %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-  <tbody>
-    <% @loan_applications.each do |loan_application| %>
-      <tr>
-        <td><%= loan_application.user.email %></td>
-        <td><%= loan_application.status %></td>
-        <td><%= loan_application.loan_amount %></td>
-        <td><%= loan_application.loan_term %></td>
-        <td><%= loan_application.purpose %></td>
-        <td><%= link_to 'Show', loan_application_path(id: loan_application.id, status: @status) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+</section>

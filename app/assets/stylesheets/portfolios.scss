@@ -19,6 +19,12 @@ body {
   background: #F2F2F2;
 }
 
+textarea:focus, 
+input:focus,
+select:focus {
+  outline: none;
+}
+
 /*****************************************/
 /*************HEADER***************/
 /*****************************************/
@@ -124,7 +130,7 @@ header {
   width: 100px;
   text-align: center;
   padding: 5px 0;
-  margin: 5px 0;
+  margin: 15px 0;
   background: #2F80ED;
   border-radius: 5px;
   left: 50%;
@@ -217,10 +223,6 @@ header {
   border: none;
   border-bottom: 1px solid #4F4F4F;
   font-size: 130%;
-}
-
-textarea:focus, input:focus{
-  outline: none;
 }
 
 .section-add-withdraw-cash .input-area input[type="submit"] {
@@ -474,6 +476,86 @@ textarea:focus, input:focus{
   width: 100px;
   font-size: 120%;
   color: #F2F2F2;
+}
+
+/*****************************************/
+/********LOANS SAVED/BEING ASSESSED SECTION********/
+/*****************************************/
+.section-application-index {
+  margin: 30px auto 110px auto;
+}
+
+.section-application-index h2 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 200%;
+}
+
+.section-application-index .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-application-index .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.section-application-index .whole-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-application-index .column-heading {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: -10px;
+  border-bottom: 1px solid #2F80ED;
+  font-size: 110%;
+}
+
+.section-application-index .one-loan {
+  width: 90%;
+  margin-top: 25px;
+  font-size: 110%;
+}
+
+.section-application-index .column-created-at {
+  display: inline-block;
+  width: 29%;
+}
+
+.section-application-index .column-purpose {
+  display: inline-block;
+  width: 36%;
+}
+
+.section-application-index .column-amount {
+  display: inline-block;
+  width: 32%;
+}
+
+.section-application-index .edit-or-destroy a {
+  margin-top: 10px;
+  margin-right: 20px;
+  display: inline-block;
+  width: 100px;
+  font-size: 100%;
+  text-decoration: none;
+  padding: 3px 0;
+  background: #2F80ED;
+  border: none;
+  border-radius: 5px;
+  color: #F2F2F2;
+  text-align: center;
 }
 
 /*****************************************/
