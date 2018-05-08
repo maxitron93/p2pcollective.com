@@ -14,14 +14,9 @@
 
 body {
   position: relative;
+  height: 100%;
   min-height: 100vh;
   background: #F2F2F2;
-}
-
-body {
-  position: relative;
-  background: #F2F2F2;
-  padding-bottom: 80px;
 }
 
 /*****************************************/
@@ -71,10 +66,17 @@ header {
 /*****************************************/
 /*************ACCOUNTS SECTION***************/
 /*****************************************/
+.section-accounts h2 {
+  text-align: center;
+  font-size: 200%;
+  margin-bottom: -10px;
+  margin-top: 40px;
+}
+
 .section-accounts {
   position: relative;
   width: 80%;
-  margin: 30px auto;
+  margin: 30px auto 110px auto;
 }
 
 .section-accounts .account-div {
@@ -88,7 +90,7 @@ header {
 
 .section-accounts .account,
 .section-accounts .account a,
-.section-accounts .account-balance {
+.section-accounts .account-balance a {
   display: inline-block;
   font-size: 120%;
   text-decoration: none;
@@ -109,7 +111,7 @@ header {
 /*************ACCOUNTS HISTORY SECTION***************/
 /*****************************************/
 .section-history-section {
-  margin: 30px auto;
+  margin: 30px auto 110px auto;
 }
 
 .section-history-section h2 {
@@ -177,7 +179,7 @@ header {
 .section-add-withdraw-cash {
   position: relative;
   width: 80%;
-  margin: 70px auto 30px auto;
+  margin: 70px auto 110px auto;
   height: 400px;
 }
 
@@ -251,12 +253,145 @@ textarea:focus, input:focus{
 }
 
 /*****************************************/
+/*************MY LOANS SECTION***************/
+/*****************************************/
+.section-my-loans {
+  margin: 40px auto 110px auto;
+}
+
+.section-my-loans h2 {
+  text-align: center;
+  font-size: 200%;
+  margin-bottom: -5px;
+}
+
+
+.section-my-loans p {
+  margin: 25px 0;
+}
+
+.section-my-loans p a {
+  display: block;
+  width: 65%;
+  padding: 7px 15px;
+  margin: 0 auto;
+  background: #2F80ED;
+  text-decoration: none;
+  border: none;
+  border-radius: 7px;
+  font-size: 120%;
+  color: #F2F2F2;
+}
+
+.section-my-loans .back-button a {
+  width: 30%;
+  text-align: center;
+}
+
+/*****************************************/
+/*************NEW CHARGE***************/
+/*****************************************/
+.section-new-charge {
+  position: relative;
+  margin: 40px auto 110px auto;
+  width: 70%;
+  height: 400px;
+}
+
+.section-new-charge .form-and-button {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  border: 1px solid #2F80ED;
+  padding: 20px 20px;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.section-new-charge .amount {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.section-new-charge .amount span {
+  font-size: 200%;
+}
+
+.section-new-charge .stripe-button-el {
+  height: 50px;
+  margin-bottom: -20px;
+}
+
+.section-new-charge button span {
+  font-size: 120%;
+  padding: 0px 20px;
+  background: none;
+  text-decoration: none;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+.section-new-charge .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-new-charge .back-button a {
+  text-decoration: none;
+  font-size: 130%; 
+  color: #F2F2F2;
+}
+
+/*****************************************/
+/*************CREARTE CHARGE***************/
+/*****************************************/
+.section-create-charge {
+  position: relative;
+  height: 400px;
+}
+
+.section-create-charge h2 {
+  text-align: center;
+  font-size: 180%;
+  width: 85%;
+  margin: 150px auto 0px auto;
+}
+
+.section-create-charge .back-button {
+  position: relative;
+  width: 150px;
+  text-align: center;
+  padding: 10px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-create-charge .back-button a {
+  text-decoration: none;
+  font-size: 150%; 
+  color: #F2F2F2;
+}
+
+/*****************************************/
 /*************FOOTER***************/
 /*****************************************/
 footer {
   position: absolute;
-  bottom: 0px;
   width: 100%;
+  bottom: 0;
   height: 80px;
   background: #2F80ED;
   text-align: center;

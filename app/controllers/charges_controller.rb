@@ -3,6 +3,8 @@ class ChargesController < ApplicationController
 
   def new
     @amount = params[:amount]
+
+    render layout: "portfolios"
   end
   
   def create
@@ -36,6 +38,8 @@ class ChargesController < ApplicationController
       }
     ])
     
+    render layout: "portfolios"
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

@@ -1,8 +1,9 @@
 <section class="section-accounts">
-  
+  <h2>My accounts</h2>
+
   <div class="cash-account account-div">
     <p class="account"><%= link_to "Cash", account_history_path(id: @cash_account_id) %></p>
-    <p class="account-balance"><%= number_to_currency(@cash_balance, percision: 2) %></p>
+    <p class="account-balance"><%= link_to number_to_currency(@cash_balance, percision: 2), account_history_path(id: @cash_account_id)%></p>
   </div>
   
   <div class="cash-intereact interact-div">
@@ -11,7 +12,7 @@
   
   <div class="active-account account-div">
     <p class="account"><%= link_to "Active investments", account_history_path(id: @active_investments_acocunt_id) %></p> 
-    <p class="account-balance"><%= number_to_currency(@active_investments_balance, percision: 2) %></p>
+    <p class="account-balance"><%= link_to number_to_currency(@active_investments_balance, percision: 2), account_history_path(id: @active_investments_acocunt_id) %></p>
   </div>
 
   <div class="active-interact interact-div">
@@ -20,7 +21,7 @@
 
   <div class="pending-account account-div">
     <p class="account"><%= link_to "Pending investments", account_history_path(id: @pending_investments_account_id) %></p> 
-    <p class="account-balance"><%= number_to_currency(@pending_investments_balance, percision: 2) %></p>
+    <p class="account-balance"><%= link_to number_to_currency(@pending_investments_balance, percision: 2), account_history_path(id: @pending_investments_account_id) %></p>
   </div>
 
   <div class="pending-interact interact-div">
@@ -31,7 +32,7 @@
   <% if @distressed_investments_exists %>
     <div class="distressed-accounts account-div">
       <p class="account"><%= link_to "Distressed investments", account_history_path(id: @distressed_investments_account_id) %></p>
-      <p class="account-balance"><%= number_to_currency(@distressed_investments, percision: 2) %></p>
+      <p class="account-balance"><%= link_to number_to_currency(@distressed_investments, percision: 2), account_history_path(id: @distressed_investments_account_id) %></p>
     </div>
 
     <div class="distressed-interact interact-div">
@@ -42,7 +43,7 @@
 
   <div class="outstanding-account account-div">
     <p class="account"><%= link_to "Outstanding loans", account_history_path(id: @outstanding_loans_account_id) %></p> 
-    <p class="account-balance"><%= number_to_currency(@outstanding_loans, percision: 2) %></p>
+    <p class="account-balance"><%= link_to number_to_currency(@outstanding_loans, percision: 2), account_history_path(id: @outstanding_loans_account_id) %></p>
   </div>
 
   <div class="outstanding-interact interact-div">
@@ -59,11 +60,6 @@
   <br>
   <p>Temporarily here but needs to be moved to nav bar</p>
   <p><%= link_to "My loan applications", my_loan_applications_path %></p>
-  <p><%= link_to "Browse investments", active_loans_index_path(status: "unfunded") %> <strong>Link to public index</strong></p> 
-
-  <br>  
-  <p>Temporarily here but needs to be deleted and only accessable by employees</p>
-  <%= link_to "Loan applications awaiting assessment", awaiting_assessment_path %>
-
+  <p><%= link_to "Browse investments", active_loans_index_path(status: "unfunded") %> <strong>Link to public index</strong></p>
 </section>
 

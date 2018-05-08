@@ -1,3 +1,8 @@
-<h2>Thanks, you paid <strong>$<%= @amount/100 %></strong>!</h2>
+<section class="section-create-charge">
+  <h2>Thanks, you have deposited <%= number_to_currency(@amount/100, percision: 2) %></h2>
 
-<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+  <div class="back-button">
+    <%= link_to "Back", root_path %>
+  </div>
+
+</section>
