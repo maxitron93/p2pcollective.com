@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>p2pcollectiveCom</title>
+    
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag    'employees', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  </head>
+
+  <body>
+    <section class="section-header">
+      <header>
+        <p class="logo">p2pcollective</p>
+        <p class="employee-area">Employee area</p>
+      </header>
+    </section>
+    
+    <p id="notice"><%= notice %></p>
+    
+    <%= yield %>
+
+
+    <section class="section-footer">
+      <footer>
+      </footer>
+    </section>
+  </body>
+</html>

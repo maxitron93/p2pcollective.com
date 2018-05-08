@@ -1,3 +1,201 @@
-// Place all the styles related to the employees controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*****************************************/
+/*************SETUP***************/
+/*****************************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  // border: 0.2px solid rgb(255, 151, 151);
+  border: 0.2px solid transaprent;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  color: #4F4F4F;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  background: #F2F2F2;
+}
+
+#notice {
+  text-align: center;
+  margin: 25px auto 0 auto;
+  color: green;
+  margin-bottom: -10px;
+  width: 80%;
+}
+
+/*****************************************/
+/*************HEADER***************/
+/*****************************************/
+header {
+  background: rgb(16, 109, 3);
+}
+
+.logo {
+  padding: 10px 0px 5px 3%;
+  font-size: 150%;
+  color: #F2F2F2;
+}
+
+.employee-area {
+  padding: 5px 0px 10px 3%;
+  top: 10px;
+  font-size: 120%;
+  color: #F2F2F2;
+}
+
+/*****************************************/
+/********LOANS BEING ASSESSED SECTION********/
+/*****************************************/
+.loans-awaiting-assessment {
+  margin: 20px auto 110px auto;
+}
+
+.loans-awaiting-assessment h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+.loans-awaiting-assessment .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0;
+  background: rgb(16, 109, 3);;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.loans-awaiting-assessment .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.loans-awaiting-assessment .whole-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.loans-awaiting-assessment .column-heading {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: -10px;
+  border-bottom: 1px solid rgb(16, 109, 3);
+  font-size: 110%;
+}
+
+.loans-awaiting-assessment .one-loan {
+  width: 90%;
+  margin-top: 25px;
+  font-size: 110%;
+}
+
+.loans-awaiting-assessment .column-created-at {
+  display: inline-block;
+  width: 29%;
+}
+
+.loans-awaiting-assessment .column-purpose {
+  display: inline-block;
+  width: 36%;
+}
+
+.loans-awaiting-assessment .column-amount {
+  display: inline-block;
+  width: 32%;
+}
+
+.loans-awaiting-assessment .assess-application a {
+  margin-top: 10px;
+  margin-right: 20px;
+  display: inline-block;
+  width: 170px;
+  font-size: 100%;
+  text-decoration: none;
+  padding: 3px 0;
+  background: rgb(16, 109, 3);
+  border: none;
+  border-radius: 5px;
+  color: #F2F2F2;
+  text-align: center;
+}
+
+/*****************************************/
+/************ASSES ONE SECTION************/
+/*****************************************/
+.secion-assess-one-loan {
+  margin: 20px auto 110px auto;
+}
+
+.secion-assess-one-loan h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+.secion-assess-one-loan .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0 5px 0;
+  background: rgb(16, 109, 3);
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.secion-assess-one-loan .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.secion-assess-one-loan .one-loan-assessment {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.secion-assess-one-loan .one-field {
+  margin: 15px 0;
+  font-size: 110%;
+}
+
+.secion-assess-one-loan .one-field p {
+  padding: 2px 0;
+}
+
+.secion-assess-one-loan .approve-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0 5px 0;
+  background: rgb(16, 109, 3);
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.secion-assess-one-loan .approve-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+/*****************************************/
+/*************FOOTER***************/
+/*****************************************/
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+  background: rgb(16, 109, 3);
+  text-align: center;
+}

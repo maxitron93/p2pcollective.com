@@ -1,100 +1,123 @@
-<h1>Assess application</h1>
+<section class="secion-assess-one-loan">
+  
+  <h2>Assess application</h2>
 
-<h2>Application id: <%= @loan_application.id %> </h2>
+  <div class="back-button">
+    <%= link_to "Back", awaiting_assessment_path %>    
+  </div>
 
-<p>
-  <strong>User email:</strong>
-  <%= User.find(@loan_application.user_id).email %>
-</p>
+  <div class="one-loan-assessment">
 
-<p>
-  <strong>Submitted:</strong>
-  <%= @loan_application.updated_at %>
-</p>
+    <div class="one-field">
+      <strong>Application id: <%= @loan_application.id %></strong> 
+    </div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @loan_application.first_name %>
-</p>
+    <div class="one-field">
+      <p><strong>User email:</strong></p>
+      <%= User.find(@loan_application.user_id).email %>
+    </div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @loan_application.last_name %>
-</p>
+    <div class="one-field">
+      <p><strong>Submitted:</strong></p>
+      <%= @loan_application.updated_at.strftime("%d-%b") %>
+    </div>
 
-<p>
-  <strong>Loan amount:</strong>
-  <%= @loan_application.loan_amount / 100 %>
-</p>
+    <div class="one-field">
+      <p><strong>First name:</strong></p>
+      <%= @loan_application.first_name %>
+    </div>
 
-<p>
-  <strong>Loan term:</strong>
-  <%= @loan_application.loan_term %>
-</p>
+    <div class="one-field">
+      <p><strong>Last name:</strong></p>
+      <%= @loan_application.last_name %>
+    </div>
 
-<p>
-  <strong>Purpose:</strong>
-  <%= @loan_application.purpose %>
-</p>
+    <div class="one-field">
+      <p><strong>Loan amount</strong>:</p>
+      <%= number_to_currency(@loan_application.loan_amount / 100, percision: 2) %>
+    </div>
 
-<p>
-  <strong>Loan Category:</strong>
-  <%= LoanCategory.find(@loan_application.loan_category_id).label %>
-</p>
+    <div class="one-field">
+      <p><strong>Loan term:</strong></p>
+      <%= @loan_application.loan_term %> months
+    </div>
 
-<p>
-  <strong>Street Address:</strong>
-  <%= @loan_application.street_address %>
-</p>
+    <div class="one-field">
+      <p><strong>Purpose:</strong></p>
+      <%= @loan_application.purpose %>
+    </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @loan_application.city %>
-</p>
+    <div class="one-field">
+      <p><strong>Loan Category:</strong></p>
+      <%= LoanCategory.find(@loan_application.loan_category_id).label %>
+    </div>
 
-<p>
-  <strong>State:</strong>
-  <%= @loan_application.state %>
-</p>
+    <div class="one-field">
+      <p><strong>Street Address:</strong></p>
+      <%= @loan_application.street_address %>
+    </div>
 
-<p>
-  <strong>Postcode:</strong>
-  <%= @loan_application.postcode %>
-</p>
+    <div class="one-field">
+      <p><strong>City:</strong></p>
+      <%= @loan_application.city %>
+    </div>
 
-<p>
-  <strong>Employment Type:</strong>
-  <%= EmploymentType.find(@loan_application.employment_type_id).label %>
-</p>
+    <div class="one-field">
+      <p><strong>State:</strong></p>
+      <%= @loan_application.state %>
+    </div>
 
-<p>
-  <strong>Weekly Income:</strong>
-  <%= @loan_application.weekly_income / 100 %>
-</p>
+    <div class="one-field">
+      <p><strong>Postcode:</strong></p>
+      <%= @loan_application.postcode %>
+    </div>
 
-<p>
-  <strong>Weekly Expenses:</strong>
-  <%= @loan_application.weekly_expenses / 100 %>
-</p>
+    <div class="one-field">
+      <p><strong>Employment Type:</strong></p>
+      <%= EmploymentType.find(@loan_application.employment_type_id).label %>
+    </div>
 
-<p>
-  <strong>Work Gap Months:</strong>
-  <%= @loan_application.work_gap_months %>
-</p>
+    <div class="one-field">
+      <p><strong>Weekly Income:</strong></p>
+      <%= number_to_currency(@loan_application.weekly_income / 100, percision: 2) %>
+    </div>
 
-<% if @loan_application.license_url.nil? %>
-  <p>No license uploaded</p>
-<% else %>
-  <p>License:</p>
-  <p><%= image_tag @loan_application.license_url, width: '400px' %></p>
-<% end %>
+    <div class="one-field">
+      <p><strong>Weekly Expenses:</strong></p>
+      <%= number_to_currency(@loan_application.weekly_expenses / 100, percision: 2) %>
+    </div>
 
-<% if @loan_application.pay_slip_url.nil? %>
-  <p>No pay slips uploaded</p>
-<% else %>
-  <p>Pay slip:</p>
-  <p><%= image_tag @loan_application.pay_slip_url, width: '400px' %></p>
-<% end %>
+    <div class="one-field">
+      <p><strong>Work Gap Months:</strong></p>
+      <%= @loan_application.work_gap_months %> months
+    </div>
 
-<p><%= link_to "Approve", approve_application_path(id: @loan_application.id), method: :post %></p>
-<%= link_to "Back", :back %> <strong>Link to previous visited page</strong>
+    <% if @loan_application.license_url.nil? %>
+    <div class="one-field">
+      <p><strong>No license uploaded</p>
+    </div>
+    <% else %>
+    <div class="one-field">
+      <p><strong>License:</strong></p>
+      <p><%= image_tag @loan_application.license_url, width: '100%' %></p>
+    </div>
+    <% end %>
+
+    <% if @loan_application.pay_slip_url.nil? %>
+    <div class="one-field">
+      <p><strong>No pay slips uploaded</p>
+    </div>
+    <% else %>
+    <div class="one-field">
+      <p><strong>Pay slip:</strong></p>
+      <p><%= image_tag @loan_application.pay_slip_url, width: '100%' %></p>
+    </div>
+    <% end %>
+
+    <div class="approve-button">
+      <%= link_to "Approve", approve_application_path(id: @loan_application.id), method: :post %>    
+    </div>
+  
+  </div>
+
+</section>
