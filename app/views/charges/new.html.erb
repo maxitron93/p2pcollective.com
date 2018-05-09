@@ -9,7 +9,7 @@
           </div>
         <% end %>
         <label class="amount">
-          <span>Amount: $<%= @amount %></span>
+          <span>Amount: <%= number_to_currency(@amount, percision: 2) %></span>
         </label>
       </article>
       
@@ -17,7 +17,7 @@
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Add $<%= @amount %>"
+              data-description="Add <%= number_to_currency(@amount, percision: 2) %>"
               data-amount="<%= @amount.to_i*100 %>"
               data-locale="auto"
               data-currency="AUD"

@@ -3,11 +3,10 @@
   <h2>Loan ID: <%= @active_loan.id %> (<%= @active_loan.status %>)</h2>
 
   <div class="back-button">
-    <%= link_to "Back", :back %>    
+    <%= link_to "Back", request.referer %>
   </div>
 
-  <%# if @active_loan.status == "unfunded" && @active_loan.user_id != current_user.id %>
-  <% if @active_loan.status == "unfunded" %>
+  <% if @active_loan.status == "unfunded" && @active_loan.user_id != current_user.id %>
     <div class="amount-input-area">
       <%= form_tag investment_path(id: @active_loan.id), method: :post do %>
         <%= label_tag 'Enter investment amount' %>

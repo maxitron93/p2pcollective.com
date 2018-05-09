@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>p2pcollectiveCom</title>
+    <title>p2pcollective</title>
     
     <%= csrf_meta_tags %>
     <meta charset="UTF-8">
@@ -14,9 +14,8 @@
   <body>
     <section class="section-header">
       <header>
-        <p class="logo">p2pcollective</p>
+        <%= link_to "p2pcollective", root_path %>
         <p class="user-email"><%= current_user.email %></p>
-        <p class="nav-icon">ICON</p>
       </header>
     </section>
     

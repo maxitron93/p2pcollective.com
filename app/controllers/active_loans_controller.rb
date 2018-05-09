@@ -89,7 +89,8 @@ class ActiveLoansController < ApplicationController
       
       # If the new investment amount pushes the loan to become over funded, tells them so
       if (amount_invested_so_far + investment_amount) > ActiveLoan.find(active_loan_id).opening_balance.to_f
-        redirect_to show_active_loan_path(id: active_loan_id), notice: "The borrower doesn't need that much. Please invest a lower amount"
+        redirect_to root_path, notice: "The borrower doesn't need that much. Please invest a lower amount"
+        # redirect_to show_active_loan_path(id: active_loan_id), notice: "The borrower doesn't need that much. Please invest a lower amount"
         
       # Elsif the new investment amount pushes the loan to become 100% funded, execute required Logic
       elsif (amount_invested_so_far + investment_amount) == ActiveLoan.find(active_loan_id).opening_balance.to_f
@@ -154,7 +155,8 @@ class ActiveLoansController < ApplicationController
           ActiveLoan.find(active_loan_id).update(status: "funded")
           redirect_to root_path, notice: "You have invested $#{investment_amount / 100} to active loan #{active_loan_id}!" 
         else
-          redirect_to show_active_loan_path(id: active_loan_id), notice: "Something went wrong. Please try again."
+          redirect_to root_path, notice: "Something went wrong. Please try again."
+          # redirect_to show_active_loan_path(id: active_loan_id), notice: "Something went wrong. Please try again."
         end
 
         # Elsif the new investment amount doesn't pushes the loan to become 100% funded, execute required Logic
@@ -184,7 +186,8 @@ class ActiveLoansController < ApplicationController
         if Investment.create!(investment_details) && Transaction.create!(transaction_details)
           redirect_to root_path, notice: "You have committed $#{investment_amount / 100} to active loan #{active_loan_id}!" 
         else
-          redirect_to show_active_loan_path(id: active_loan_id), notice: "Something went wrong. Please try again."
+          redirect_to root_path, notice: "Something went wrong. Please try again."
+          # redirect_to show_active_loan_path(id: active_loan_id), notice: "Something went wrong. Please try again."
         end
 
       end
@@ -212,7 +215,8 @@ class ActiveLoansController < ApplicationController
 
       # If the new repayment amount pushes the repayment to become over repaid, tells them so
       if (amount_repaid_so_far + repayment_amount) > ActiveLoan.find(active_loan_id).opening_balance.to_f
-        redirect_to show_active_loan_path(id: active_loan_id), notice: "You cannot repay more than what you owe. Please enter a lower repayment amount."
+        redirect_to root_path, notice: "You cannot repay more than what you owe. Please enter a lower repayment amount."
+        # redirect_to show_active_loan_path(id: active_loan_id), notice: "You cannot repay more than what you owe. Please enter a lower repayment amount."
       
       elsif (amount_repaid_so_far + repayment_amount) <= ActiveLoan.find(active_loan_id).opening_balance.to_f
 
@@ -272,7 +276,7 @@ class ActiveLoansController < ApplicationController
         end
 
         # If the new repayment amount pushes the loan to become 100% repaid, execute required Logic
-        if amount_repaid_so_far == ActiveLoan.find(active_loan_id).opening_balance.to_f
+        if amount_repaid_so_far == ActiveLoan.find(active_loan_id).opening_balance.to_f || amount_repaid_so_far + 1 > ActiveLoan.find(active_loan_id).opening_balance.to_f
           ActiveLoan.find(active_loan_id).update(status: "settled")
           redirect_to root_path, notice: "You have successfully repaid $#{repayment_amount / 100} to Loan ID: #{active_loan_id}. You do not owe any more money on that loan."
         # Else, just redirect to root_path
@@ -283,6 +287,7 @@ class ActiveLoansController < ApplicationController
       
     else
       redirect_to root_path, notice: "You do not have enough in your Cash account to repay $#{repayment_amount / 100}."
+      # redirect_to show_active_loan_path(id: active_loan_id), notice: "You do not have enough in your Cash account to repay $#{repayment_amount / 100}."
     end
 
   end

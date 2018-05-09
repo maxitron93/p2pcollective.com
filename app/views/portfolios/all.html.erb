@@ -56,10 +56,19 @@
     </div>
   <% end %>
   
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <br>
-  <p>Temporarily here but needs to be moved to nav bar</p>
-  <p><%= link_to "My loan applications", my_loan_applications_path %></p>
-  <p><%= link_to "Browse investments", active_loans_index_path(status: "unfunded") %> <strong>Link to public index</strong></p>
+  <div class="all-navigation-buttons">
+    <div class="navigation-button">
+      <%= link_to "Browse investments", active_loans_index_path(status: "unfunded") %>
+    </div>  
+
+    <div class="navigation-button">
+      <%= link_to "My loan applications", my_loan_applications_path %>
+    </div>
+
+    <div class="navigation-button">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+
 </section>
 

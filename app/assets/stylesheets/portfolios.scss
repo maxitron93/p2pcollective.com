@@ -35,33 +35,29 @@ select:focus {
 /*************HEADER***************/
 /*****************************************/
 header {
+  position: relative;
   background: #2F80ED;
 }
 
-.logo {
+
+header a{
   display: inline-block;
-  width: 49.5%;
-  padding: 5px 0px 5px 3%;
-  font-size: 150%;
+  padding: 20px 0px 30px 5%;
+  font-size: 200%;
   color: #F2F2F2;
-  width: 70%;
+  width: 40%;
+  text-decoration: none;
 }
 
 .user-email {
+  position: relative;
+  top: -5px;
   display: inline-block;
-  padding: 0px 0px 10px 3%;
+  padding-right: 5%;
   font-size: 110%;
   color: #F2F2F2;
-  width: 70%;
-}
-
-.nav-icon {
-  display: inline-block;
-  position: absolute;
-  right: 3%;
-  top: 10px;
-  font-size: 200%;
-  color: #F2F2F2;
+  width: 59%;
+  text-align: end;
 }
 
 /*****************************************/
@@ -118,6 +114,32 @@ header {
   text-decoration: none;
   font-size: 110%;
 }
+
+.section-accounts .navigation-button {
+  display: block;
+  width: 70%;
+  margin: 30px auto;
+  background: #2F80ED;
+  border: none;
+  border-radius: 5px;
+}
+
+.section-accounts .navigation-button a {
+  display: block;
+  padding: 6px 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #F2F2F2;
+  text-decoration: none;
+  font-size: 120%;
+}
+
+.section-accounts .all-navigation-buttons {
+  margin-top: 40px;
+}
+
+
 
 /*****************************************/
 /*************ACCOUNTS HISTORY SECTION***************/
