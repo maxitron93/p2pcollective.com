@@ -88,14 +88,14 @@ textarea:focus, input:focus{
 }
 
 input[type="submit"] {
-  width: 80px;
+  width: 90px;
   margin: 0 auto;
   background: #2F80ED;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #F2F2F2;
-  padding: 3px 15px;
-  font-size: 100%;
+  padding: 5px 0;
+  font-size: 110%;
   text-align: center;
   margin-top: 10px;
   cursor: pointer;
@@ -103,22 +103,22 @@ input[type="submit"] {
 
 form a {
   display: inline-block;
-  width: 80px;
+  width: 90px;
   text-align: center;
   text-decoration: none;
   font-size: 100%;
   background: #2F80ED;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #F2F2F2;
-  padding: 3px 15px;
-  font-size: 100%;
+  padding: 5px 0;
+  font-size: 110%;
   margin-left: 30px;
   margin-top: 10px;
 }
 
 .buttons {
-  width: 200px;
+  width: 215px;
   margin: 0 auto;
 }
 
@@ -141,7 +141,7 @@ form a {
   padding: 5px 15px;
   background: #2F80ED;
   color: #F2F2F2;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 /*****************************************/
 /*************FOOTER***************/
