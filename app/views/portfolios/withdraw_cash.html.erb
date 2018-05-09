@@ -7,8 +7,8 @@
     
     <%= form_tag withdraw_confirmation_path, method: :post do %>
       <p>Enter amount:</p>
-      $ <%= number_field_tag 'amount', "1", min: 1, max: 50000, required: true %>
-      <%= submit_tag 'Withdraw cash' %>
+      $ <%= number_field_tag 'amount', nil, min: 1, max: 50000, required: true %>
+      <%= submit_tag 'Withdraw cash', data: { confirm: "Please confirm to withdraw cash." } %>
     <% end %>
 
     <div class="back-button">
