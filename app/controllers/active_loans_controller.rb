@@ -5,6 +5,8 @@ class ActiveLoansController < ApplicationController
     @status = params[:status]
 
     @active_loans = ActiveLoan.where(status: params[:status])
+
+    render layout: "portfolios"
   end
 
   def my_index

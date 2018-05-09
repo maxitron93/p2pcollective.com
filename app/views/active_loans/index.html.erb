@@ -1,31 +1,30 @@
-<h1>Browse Investments</h1>
+<section class="section-browse-investments">
 
-<p id="notice"><%= notice %></p>
+  <h2>Browse investments</h2>
 
-<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
-<p><%= @status %></p>
+  <div class="back-button">
+  <%= link_to "Back", root_path %>
+  </div>
 
-<% @active_loans.each do |active_loan| %>
-  <br>
-  <h3><%= link_to "Loan by #{User.find(active_loan.user_id).email}", show_active_loan_path(id: active_loan.id) %></h3>
+  <% @active_loans.each do |active_loan| %>
+    
+    <%= link_to show_active_loan_path(active_loan.id) do %>
+    <div class="one-active-loan">
+      <% relevant_investments = Investment.where(active_loan_id: active_loan.id) %>
+        <% amount_invested_so_far = 0.0 %>
+        <% relevant_investments.each do |investment| %>
+        <% amount_invested_so_far += investment.opening_balance %>
+      <% end %>
+      <% funded_percentage = amount_invested_so_far / active_loan.opening_balance %>
+      <h3><%= active_loan.category %></h3>
+      <p class="interest-rate"><%= active_loan.interest_rate %>%</p>
+      <p class="loan-amount"><%= number_to_currency((active_loan.opening_balance / 100), precision: 0) %></p>
+      <p class="funded-percentage"><%=(funded_percentage * 100).to_i %>% funded</p>
+      <p class="loan-term"><%= active_loan.loan_term %> months</p>
+      <p class="employment">Employmed as <%= active_loan.employment_type %></p>
+    </div>
+    <% end %>
 
-  <p>Loan amount: <%= active_loan.opening_balance / 100 %></p>
-  <% if @status == "unfunded" %>
-    <p>Committed Investments: <strong><%= "Needs to be calculated from total of Investments" %></strong></p>
-    <p>Investment opportunitiy remaing: <strong><%= "Calculation" %></strong></p>
   <% end %>
-  <p>Loan term: <%= active_loan.loan_term %> months</p>
-  <p>Purpose: <%= active_loan.purpose %></p>
-  <p>Category: <%= active_loan.category %></p>
-  <p>Interest rate: <%= active_loan.interest_rate %>%</p>
-  <p>Monthly repayment: $<%= active_loan.periodic_repayment_amount %></p>
-  <p>Repayment capacity: $<%= active_loan.repayment_capacity / 100 %></p>
-  <p>Employment type: <%= active_loan.employment_type %></p>
-  <p>Work gap months: <%= active_loan.work_gap_months %></p>
-  <p>Created: <%= time_ago_in_words(active_loan.created_at) %> ago</p>
-  
-  <% if @status == "pending approval" %>
-    <%= link_to "Go live!", approve_active_loan_path(id: active_loan.id), method: :post %>
-  <% end %>
-
-<% end %>
+ 
+</section>

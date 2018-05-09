@@ -135,7 +135,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 15px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -144,8 +143,12 @@ header {
 }
 
 .section-history-section .back-button a {
+  display: block;
+  padding: 5px 0;
   text-decoration: none;
-  font-size: 120%; 
+  font-size: 120%;
+  width: 100%;
+  height: 100%;
   color: #F2F2F2;
 }
 
@@ -240,13 +243,14 @@ header {
   background: #2F80ED;
   border-radius: 5px;
   color: #F2F2F2;
+  cursor: pointer;
 }
+
 
 .section-add-withdraw-cash .back-button {
   position: absolute;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   background: #2F80ED;
   border-radius: 5px;
   bottom: -100px;
@@ -255,7 +259,11 @@ header {
 }
 
 .section-add-withdraw-cash .back-button a {
+  display: block;
   text-decoration: none;
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
   font-size: 130%; 
   color: #F2F2F2;
 }
@@ -356,7 +364,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   background: #2F80ED;
   border-radius: 5px;
   top: 80px;
@@ -365,7 +372,11 @@ header {
 }
 
 .section-new-charge .back-button a {
+  display: block;
   text-decoration: none;
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
   font-size: 130%; 
   color: #F2F2F2;
 }
@@ -389,7 +400,6 @@ header {
   position: relative;
   width: 150px;
   text-align: center;
-  padding: 10px 0;
   background: #2F80ED;
   border-radius: 5px;
   top: 40px;
@@ -398,7 +408,11 @@ header {
 }
 
 .section-create-charge .back-button a {
+  display: block;
   text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
   font-size: 150%; 
   color: #F2F2F2;
 }
@@ -420,7 +434,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 20px 0 10px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -429,7 +442,11 @@ header {
 }
 
 .section-loan-application .back-button a {
+  display: block;
   text-decoration: none;
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
   font-size: 120%; 
   color: #F2F2F2;
 }
@@ -492,10 +509,11 @@ header {
   width: 100px;
   font-size: 120%;
   color: #F2F2F2;
+  cursor: pointer;
 }
 
 /*****************************************/
-/********LOANS SAVED/BEING ASSESSED SECTION********/
+/****LOANS SAVED/BEING ASSESSED SECTION****/
 /*****************************************/
 .section-application-index {
   margin: 30px auto 110px auto;
@@ -511,7 +529,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 20px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -520,8 +537,12 @@ header {
 }
 
 .section-application-index .back-button a {
+  display: block;
   text-decoration: none;
-  font-size: 120%; 
+  font-size: 120%;
+  padding: 5px 0;
+  height: 100%;
+  width: 100%;
   color: #F2F2F2;
 }
 
@@ -563,15 +584,16 @@ header {
   margin-top: 10px;
   margin-right: 20px;
   display: inline-block;
+  padding: 6px 0;
   width: 100px;
   font-size: 100%;
   text-decoration: none;
-  padding: 3px 0;
   background: #2F80ED;
   border: none;
   border-radius: 5px;
   color: #F2F2F2;
   text-align: center;
+  cursor: pointer;
 }
 
 .section-application-index .view-application a {
@@ -581,12 +603,13 @@ header {
   width: 100px;
   font-size: 100%;
   text-decoration: none;
-  padding: 3px 0;
+  padding: 6px 0;
   background: #2F80ED;
   border: none;
   border-radius: 5px;
   color: #F2F2F2;
   text-align: center;
+  cursor: pointer;
 }
 
 /*****************************************/
@@ -605,7 +628,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 20px 0 5px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -614,7 +636,11 @@ header {
 }
 
 .view-one-loan .back-button a {
+  display: block;
   text-decoration: none;
+  padding: 5px 0;
+  height: 100%;
+  width: 100%;
   font-size: 120%; 
   color: #F2F2F2;
 }
@@ -650,7 +676,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 20px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -659,8 +684,12 @@ header {
 }
 
 .section-my-active-loans .back-button a {
+  display: block;
   text-decoration: none;
-  font-size: 120%; 
+  font-size: 120%;
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
   color: #F2F2F2;
 }
 
@@ -742,7 +771,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 20px 0 5px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -751,7 +779,11 @@ header {
 }
 
 .section-one-active-loan .back-button a {
+  display: block;
   text-decoration: none;
+  padding: 5px 0;
+  width: 100%;
+  height: 100%;
   font-size: 120%; 
   color: #F2F2F2;
 }
@@ -791,6 +823,7 @@ header {
   border: none;
   border-radius: 4px;
   color: #F2F2F2;
+  cursor: pointer;
 }
 
 .section-one-active-loan .one-field {
@@ -825,7 +858,6 @@ header {
   position: relative;
   width: 100px;
   text-align: center;
-  padding: 5px 0;
   margin: 20px 0;
   background: #2F80ED;
   border-radius: 5px;
@@ -834,7 +866,11 @@ header {
 }
 
 .section-my-investments .back-button a {
+  display: block;
   text-decoration: none;
+  padding: 5px 0;
+  height: 100%;
+  width: 100%;
   font-size: 120%; 
   color: #F2F2F2;
 }
@@ -898,6 +934,112 @@ header {
   border-radius: 5px;
   color: #F2F2F2;
   text-align: center;
+}
+
+/*****************************************/
+/*************BROWSE INVESTMENTS SECTION***************/
+/*****************************************/
+.section-browse-investments {
+  margin: 30px auto 110px auto;
+}
+
+.section-browse-investments h2 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 200%;
+}
+
+.section-browse-investments .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  margin: 20px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-browse-investments .back-button a {
+  display: block;
+  padding: 5px 0;
+  text-decoration: none;
+  font-size: 120%;
+  width: 100%;
+  height: 100%;
+  color: #F2F2F2;
+}
+
+.section-browse-investments a {
+  text-decoration: none;
+}
+
+.section-browse-investments .one-active-loan {
+  position: relative;
+  width: 85%;
+  margin: 30px auto;
+  border-radius: 10px;
+  color: #F2F2F2;
+}
+
+.section-browse-investments a:nth-child(even) .one-active-loan {
+  background: #4B8A66;
+}
+
+.section-browse-investments a .one-active-loan p,
+.section-browse-investments a .one-active-loan h3 {
+  color: #F2F2F2;
+}
+
+.section-browse-investments .one-active-loan:nth-child(odd) {
+  background: rgb(240, 135, 43);
+}
+
+.section-browse-investments .one-active-loan h3 {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  padding-left: 10px;
+  width: 69%;
+  font-size: 150%;
+}
+
+.section-browse-investments .interest-rate {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  width: 29%;
+  font-size: 200%;
+}
+
+.section-browse-investments .loan-amount {
+  display: inline-block;
+  padding: 10px 0px 10px 10px;
+  width: 25%;
+  font-size: 120%;
+  margin-top: 15px;
+}
+
+.section-browse-investments .funded-percentage {
+  display: inline-block;
+  padding: 10px 0px 10px 5px;
+  width: 32%;
+  font-size: 120%;
+}
+
+.section-browse-investments .loan-term {
+  display: inline-block;
+  padding: 10px 0px 10px 10px;
+  width: 38%;
+  font-size: 120%;
+}
+
+.section-browse-investments .employment {
+  display: inline-block;
+  padding: 10px 0px 10px 10px;
+  width: 100%;
+  font-size: 120%;
+  margin-bottom: 5px;
 }
 
 /*****************************************/
