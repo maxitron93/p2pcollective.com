@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
   require 'check_accounts'
+  require 'check_login'
+  before_action :require_login
 
   def new
     @amount = params[:amount]

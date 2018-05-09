@@ -1,6 +1,8 @@
 class EmployeesController < ApplicationController
   require 'repayment_calculator'
-  
+  require 'check_login'
+  before_action :require_login
+    
   def awaiting_assessment
     @loan_applications = LoanApplication.where(status: "being assessed")
 

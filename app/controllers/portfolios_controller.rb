@@ -1,7 +1,10 @@
 class PortfoliosController < ApplicationController
-  
   require 'check_accounts'
-
+  require 'check_login'  
+  require 'check_user'
+  before_action :require_login
+  before_action :check_account_ids, only: [:account_history]
+  
   # Home page for all users that are logged in
   def all
 

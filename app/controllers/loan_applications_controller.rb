@@ -1,6 +1,11 @@
 class LoanApplicationsController < ApplicationController
+  require 'check_login'
+  require 'check_user'
+  before_action :require_login
+  before_action :compare_user_id, only: [:edit, :update, :destroy, :submit, :show]
   before_action :set_loan_application, only: [:show, :edit, :update, :destroy]
-
+  
+  
   # GET /loan_applications
   # GET /loan_applications.json
   def index
@@ -27,7 +32,6 @@ class LoanApplicationsController < ApplicationController
 
   # GET /loan_applications/1/edit
   def edit
-
     render layout: "portfolios"
   end
 

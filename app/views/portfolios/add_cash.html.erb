@@ -5,7 +5,7 @@
 
     <%= form_tag new_charge_path, method: :get do %>
       <p>Enter amount:</p>
-      $ <%= text_field_tag 'amount' %>
+      $ <%= number_field_tag 'amount', "1", min: 1, max: 50000, required: true %>
       <%= submit_tag 'Add cash' %>
     <% end %>
 

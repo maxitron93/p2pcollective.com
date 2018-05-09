@@ -1,5 +1,8 @@
 class ActiveLoansController < ApplicationController
   require 'check_accounts'
+  require 'check_login'
+  before_action :require_login
+ 
 
   def index
     @status = params[:status]

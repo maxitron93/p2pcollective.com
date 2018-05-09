@@ -15,47 +15,47 @@
 
     <div class="field">
       <%= form.label :first_name %>
-      <%= form.text_field :first_name, id: :loan_application_first_name %>
+      <%= form.text_field :first_name, id: :loan_application_first_name, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :last_name %>
-      <%= form.text_field :last_name, id: :loan_application_last_name %>
+      <%= form.text_field :last_name, id: :loan_application_last_name, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :street_address %>
-      <%= form.text_field :street_address, id: :loan_application_street_address %>
+      <%= form.text_field :street_address, id: :loan_application_street_address, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :city %>
-      <%= form.text_field :city, id: :loan_application_city %>
+      <%= form.text_field :city, id: :loan_application_city, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :state %>
-      <%= form.text_field :state, id: :loan_application_state %>
+      <%= form.text_field :state, id: :loan_application_state, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :postcode %>
-      <%= form.number_field :postcode, id: :loan_application_postcode %>
+      <%= form.number_field :postcode, id: :loan_application_postcode, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :"Loan amount (up to $50,000)" %>
-      $ <%= form.number_field :loan_amount, id: :loan_application_loan_amount %>
+      $ <%= form.number_field :loan_amount, id: :loan_application_loan_amount, value: 1, min: 1, max: 50000 %>
     </div>
 
     <div class="field">
       <%= form.label "Loan term (up to 60 months)" %>
-      <%= form.number_field :loan_term, id: :loan_application_loan_term %>
+      <%= form.number_field :loan_term, id: :loan_application_loan_term, value: 1, min: 1, max: 60 %>
     </div>
 
     <div class="field">
       <%= form.label :purpose %>
-      <%= form.text_area :purpose, id: :loan_application_purpose, rows: 5 %>
+      <%= form.text_area :purpose, id: :loan_application_purpose, rows: 5, required: true %>
     </div>
 
     <div class="field">
@@ -70,17 +70,17 @@
 
     <div class="field">
       <%= form.label :weekly_income %>
-      $ <%= form.number_field :weekly_income, id: :loan_application_weekly_income %>
+      $ <%= form.number_field :weekly_income, id: :loan_application_weekly_income, value: 1, min: 1, max: 100000 %>
     </div>
 
     <div class="field">
       <%= form.label :weekly_expenses %>
-      $ <%= form.number_field :weekly_expenses, id: :loan_application_weekly_expenses %>
+      $ <%= form.number_field :weekly_expenses, id: :loan_application_weekly_expenses, value: 1, min: 1, max: 100000 %>
     </div>
 
     <div class="field">
       <%= form.label "Months unemployed in the last 2 years" %>
-      <%= form.number_field :work_gap_months, id: :loan_application_work_gap_months %>
+      <%= form.number_field :work_gap_months, id: :loan_application_work_gap_months, value: 0, min: 0, max: 100000 %>
     </div>
 
     <div class="field">
