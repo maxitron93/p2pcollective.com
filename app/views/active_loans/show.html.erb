@@ -3,7 +3,7 @@
   <h2>Loan ID: <%= @active_loan.id %> (<%= @active_loan.status %>)</h2>
 
   <div class="back-button">
-    <%= link_to "Back", my_active_loans_index_path(status: @active_loan.status) %>    
+    <%= link_to "Back", :back %>    
   </div>
 
   <%# if @active_loan.status == "unfunded" && @active_loan.user_id != current_user.id %>

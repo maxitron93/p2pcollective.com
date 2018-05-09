@@ -12,12 +12,18 @@
   color: #4F4F4F;
 }
 
+html {
+  background: white;
+}
+
 body {
   position: relative;
   height: 100vh;
   min-height: 650px;
   background: #F2F2F2;
   padding-bottom: 80px;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 

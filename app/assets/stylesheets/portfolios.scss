@@ -12,11 +12,17 @@
   color: #4F4F4F;
 }
 
+html {
+  background: white;
+}
+
 body {
   position: relative;
   height: 100%;
   min-height: 100vh;
   background: #F2F2F2;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 textarea:focus, 
@@ -800,6 +806,98 @@ header {
 
 .section-one-active-loan .one-field p {
   padding: 2px 0;
+}
+
+/*****************************************/
+/*********MT INVESTMENTS SECTION*********/
+/*****************************************/
+.section-my-investments {
+  margin: 30px auto 110px auto;
+}
+
+.section-my-investments h2 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 200%;
+}
+
+.section-my-investments .back-button {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 20px 0;
+  background: #2F80ED;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.section-my-investments .back-button a {
+  text-decoration: none;
+  font-size: 120%; 
+  color: #F2F2F2;
+}
+
+.section-my-investments .whole-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-my-investments .column-heading {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: -10px;
+  border-bottom: 1px solid #2F80ED;
+  font-size: 110%;
+}
+
+.section-my-investments .one-investment {
+  width: 90%;
+  margin: 25px auto 0 auto;
+  font-size: 110%;
+}
+
+.section-my-investments .column-created-at {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-investments .column-amount {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-investments .column-interest-rate {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-investments .fourth-column {
+  display: inline-block;
+  width: 22%;
+  margin-right: 1.5%;
+  text-align: center;
+}
+
+.section-my-investments .view-active-loan a {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 100%;
+  width: 130px;
+  text-decoration: none;
+  padding: 3px 0;
+  background: #2F80ED;
+  border: none;
+  border-radius: 5px;
+  color: #F2F2F2;
+  text-align: center;
 }
 
 /*****************************************/

@@ -12,11 +12,17 @@
   color: #4F4F4F;
 }
 
+html {
+  background: white;
+}
+
 body {
   position: relative;
   height: 100%;
   min-height: 100vh;
   background: #F2F2F2;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 #notice {

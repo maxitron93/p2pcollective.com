@@ -1,24 +1,66 @@
-<h1>My investments</h1>
+<section class="section-my-investments">
 
-<%= link_to "Back", root_path %> <strong>Link to root_path</strong>
+  <h2>My <%= @status %> investments</h2>
 
-<% @investments_by_status.each do |investment| %>
-  <h2><%= link_to "Loan ID: #{investment.active_loan_id}", show_active_loan_path(id: investment.active_loan_id) %></h2>
-  <p>Investment amount: $<%= investment.opening_balance / 100 %></p>
-  <p>Monthly repayments: $<%= (investment.repayment_amount / 100).round(2) %></p>
-  <% if ActiveLoan.find(investment.active_loan_id).status == "funded" %>
-    <p>Loan start date: <%= investment.created_at %></p>
-    <p>Loan end date: <%= ActiveLoan.find(investment.active_loan_id).loan_term %></p>
-  <% elsif ActiveLoan.find(investment.active_loan_id).status == "unfunded" %>
-    <p>Loan amount: $<%= ActiveLoan.find(investment.active_loan_id.to_i).opening_balance / 100 %></p>
+  <div class="back-button">
+  <%= link_to "Back", root_path %>
+  </div>
+
+  <div class="column-heading whole-table">
+    <div class="column-created-at">date invested</div>
+    <div class="column-amount">investment amount</div>
+    <div class="column-interest-rate">interest rate</div>
+    <div class="fourth-column">
+      <% if @status == "funded" %>
+      percent repaid
+      <% else %>
+      percent funded
+      <% end %>
+    </div>
+  </div>
     
-    <% amount_invested_so_far = 0 %>
-    <% Investment.where(active_loan_id: investment.active_loan_id).each do |investment| %>
-      <% amount_invested_so_far += investment.opening_balance %>
-    <% end %>
-    
-    <p>Amount funded so far: $<%= amount_invested_so_far / 100 %> </p>
-    <p>Investment opportunity remaining: $<%= (ActiveLoan.find(investment.active_loan_id.to_i).opening_balance - amount_invested_so_far) / 100 %> </p>
-    
+
+  <% @investments_by_status.each do |investment| %>
+
+    <div class="one-investment">
+
+      <div class="column-created-at"><%= ActiveLoan.find(investment.active_loan_id).updated_at.strftime("%d-%b") %></div>
+      <div class="column-amount"><%= number_to_currency(investment.opening_balance / 100, percision: 2) %></div>
+      <div class="column-interest-rate">%<%= ActiveLoan.find(investment.active_loan_id).interest_rate.round(2) %></div>
+      
+      <% if @status == "funded" %>
+
+        <% total_repaid = 0 %>
+        <% repayments = Repayment.where(investment_id: investment.id) %>
+        <% repayments.each do |repayment| %>
+        <% total_repaid += repayment.amount %>
+        <% end %>
+        <% percent_repaid = ((total_repaid.to_f / investment.opening_balance.to_f) * 100).round(2) %>
+        <div class="fourth-column">
+          %<%= percent_repaid %>
+        </div>
+      <% else %>
+
+        <% total_funded = 0 %>
+        <% investments = Investment.where(active_loan_id: investment.active_loan_id) %>
+        <% investments.each do |investment| %>
+        <% total_funded += investment.opening_balance %>
+        <% end %>
+        <% percent_funded = ((total_funded.to_f / ActiveLoan.find(investment.active_loan_id).opening_balance.to_f ) * 100).round(2) %>
+        <div class="fourth-column">
+          %<%= percent_funded %>
+        </div>
+      
+      <% end %>
+
+      <div class="view-active-loan">
+          <%= link_to "View loan",  show_active_loan_path(id: investment.active_loan_id) %>
+      </div>
+
+      </div>
+
+    </div>
+
   <% end %>
-<% end %>
+
+</section>

@@ -17,7 +17,7 @@ class ActiveLoansController < ApplicationController
 
   def my_investments
     all_currnet_users_investments = Investment.where(user_id: current_user.id)
-
+    @status = params[:status]
     @investments_by_status = []
     dummy_count = 0
     all_currnet_users_investments.each do |investment|
@@ -27,14 +27,15 @@ class ActiveLoansController < ApplicationController
         dummy_count += 1
       end
     end
+
+    
     
     render layout: "portfolios"
   end
 
   def approve
     loan = LoanApplication.find(params[:id])
-    loan.status = "assessed"
-    
+
     annual_basis_points = rand(600..900)
 
     ActiveLoan.create!([
@@ -53,10 +54,10 @@ class ActiveLoansController < ApplicationController
       }
     ])
 
-    if loan.save!
+    if loan.update(status: "assessed")
       redirect_to awaiting_assessment_path, notice: 'Loan application successfully approved. It is now live.'
     else
-      redirect_to awaiting_assessment_path, notice: 'Error please try again'
+      redirect_to awaiting_assessment_path, notice: 'Error please try again.'
     end
 
   end
