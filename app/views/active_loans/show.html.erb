@@ -26,6 +26,10 @@
     </div>
   <% end %>
 
+  <% if @active_loan.status == "unfunded" && @active_loan.user_id == current_user.id %>
+    <div class="your-loan-notice">This is your loan. You cannot invest in your own loan.</div>
+  <% end %>
+
   <div class="one-field">
     <p><strong>Loan amount:</strong></p>
     <%= number_to_currency(@active_loan.opening_balance / 100, percision: 2) %>
