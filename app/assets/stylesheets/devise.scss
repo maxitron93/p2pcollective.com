@@ -98,6 +98,7 @@ input[type="submit"] {
   font-size: 100%;
   text-align: center;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 form a {
@@ -126,14 +127,17 @@ form a {
 /*****************************************/
 .back {
   position: absolute;
-  bottom: -60px;
+  bottom: -70px;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 
 .back a {
-  font-size: 150%;
+  display: block;
+  font-size: 120%;
   text-decoration: none;
+  width: 100px;
   padding: 5px 15px;
   background: #2F80ED;
   color: #F2F2F2;
