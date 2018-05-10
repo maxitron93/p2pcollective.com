@@ -6,18 +6,29 @@
   <%= link_to "Back", root_path %>
   </div>
   
-  <% if @start >= 10 %> 
-    <div class="loan-nav-button left-button top-area">
-      <%= link_to "<--", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %>
-    </div>
-  <% end %>
+  <div class="top-navigation-buttons">
+    <% if @start >= 10 %> 
+      <div class="loan-nav-button left-button top-area">
+        <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %></strong>
+      </div>
+    <% end %>
 
-  <% if @finish <= @total_count %>
-    <div class="loan-nav-button right-button top-area">
-      <%= link_to "-->", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %>
-    </div>
-  <% end %>
+    <% if @total_count < @finish %>
+      <% final = (@total_count - 1) %>
+    <% else %>
+      <% final = @finish %>
+    <% end %>
+  
 
+    <p class="showing-notice">showing <%= (@start + 1) %> to <%= (final + 1) %> of <%= @total_count %></p>
+
+    <% if @finish <= @total_count %>
+      <div class="loan-nav-button right-button top-area">
+        <strong><%= link_to ">", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %></strong>
+      </div>
+    <% end %>
+  </div>
+  
   <% @active_loans.each do |active_loan| %>
     
     <%= link_to show_active_loan_path(active_loan.id) do %>
@@ -39,16 +50,26 @@
 
   <% end %>
 
-  <% if @start >= 10 %>
-    <div class="loan-nav-button left-button top-area">
-      <%= link_to "<--", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %>
-    </div>
-  <% end %>
+  <div class="bottom-navigation-buttons">
+    <% if @start >= 10 %>
+      <div class="loan-nav-button left-button top-area">
+        <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %></strong>
+      </div>
+    <% end %>
 
-  <% if @finish <= @total_count %>
-    <div class="loan-nav-button right-button top-area">
-      <%= link_to "-->", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %>
-    </div>
-  <% end %>
- 
+    <% if @total_count < @finish %>
+      <% final = (@total_count - 1) %>
+    <% else %>
+      <% final = @finish %>
+    <% end %>
+
+    <p class="showing-notice">showing <%= (@start + 1) %> to <%= (final + 1) %> of <%= @total_count %></p>
+
+    <% if @finish <= @total_count %>
+      <div class="loan-nav-button right-button top-area">
+        <strong><%= link_to ">", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %></strong>
+      </div>
+    <% end %>
+  </div>
+
 </section>

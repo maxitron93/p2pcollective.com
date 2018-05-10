@@ -37,27 +37,26 @@ select:focus {
 header {
   position: relative;
   background: #2F80ED;
+  height: 80px;
 }
 
 
 header a{
   display: inline-block;
-  padding: 20px 0px 30px 5%;
+  margin: 5px 0;
+  padding-left: 5%;
   font-size: 200%;
   color: #F2F2F2;
-  width: 40%;
+  width: 100%;
   text-decoration: none;
 }
 
 .user-email {
-  position: relative;
-  top: -5px;
   display: inline-block;
-  padding-right: 5%;
+  padding-left: 5%;
   font-size: 110%;
   color: #F2F2F2;
-  width: 59%;
-  text-align: end;
+  width: 100%;
 }
 
 /*****************************************/
@@ -1004,6 +1003,55 @@ header a{
   text-decoration: none;
 }
 
+.section-browse-investments .top-navigation-buttons {
+  text-align: center;
+  position: relative;
+  margin: 40px 0;
+}
+
+.section-browse-investments .top-navigation-buttons .left-button {
+  position: absolute;
+  display: inline-block;
+  width: 12%;
+  background: #2F80ED;
+  border-radius: 4px;
+  left: 12%;
+  bottom: -1px;
+}
+
+.section-browse-investments .top-navigation-buttons .left-button a {
+  display: inline-block;
+  width: 100%;
+  font-size: 120%;
+  color: #F2F2F2;
+  margin-bottom: 3px;
+}
+
+.section-browse-investments .top-navigation-buttons .showing-notice {
+  display: inline-block;
+  width: 200px;
+  font-size: 120%;
+  text-align: center;
+}
+
+.section-browse-investments .top-navigation-buttons .right-button {
+  position: absolute;
+  display: inline-block;
+  width: 12%;
+  background: #2F80ED;
+  border-radius: 4px;
+  right: 12%;
+  bottom: -1px;
+}
+
+.section-browse-investments .top-navigation-buttons .right-button a {
+  display: inline-block;
+  width: 100%;
+  font-size: 120%;
+  color: #F2F2F2;
+  margin-bottom: 3px;
+}
+
 .section-browse-investments .one-active-loan {
   position: relative;
   width: 85%;
@@ -1070,6 +1118,55 @@ header a{
   width: 100%;
   font-size: 120%;
   margin-bottom: 5px;
+}
+
+.section-browse-investments .bottom-navigation-buttons {
+  text-align: center;
+  position: relative;
+  margin: 40px 0;
+}
+
+.section-browse-investments .bottom-navigation-buttons .left-button {
+  position: absolute;
+  display: inline-block;
+  width: 12%;
+  background: #2F80ED;
+  border-radius: 4px;
+  left: 12%;
+  bottom: -1px;
+}
+
+.section-browse-investments .bottom-navigation-buttons .left-button a {
+  display: inline-block;
+  width: 100%;
+  font-size: 120%;
+  color: #F2F2F2;
+  margin-bottom: 3px;
+}
+
+.section-browse-investments .bottom-navigation-buttons .showing-notice {
+  display: inline-block;
+  width: 200px;
+  font-size: 120%;
+  text-align: center;
+}
+
+.section-browse-investments .bottom-navigation-buttons .right-button {
+  position: absolute;
+  display: inline-block;
+  width: 12%;
+  background: #2F80ED;
+  border-radius: 4px;
+  right: 12%;
+  bottom: -1px;
+}
+
+.section-browse-investments .bottom-navigation-buttons .right-button a {
+  display: inline-block;
+  width: 100%;
+  font-size: 120%;
+  color: #F2F2F2;
+  margin-bottom: 3px;
 }
 
 /*****************************************/

@@ -10,7 +10,7 @@
     <div class="amount-input-area">
       <%= form_tag investment_path(id: @active_loan.id), method: :post do %>
         <%= label_tag 'Enter investment amount' %>
-        $ <%= number_field_tag 'investment_amount', nil, min: 1 %>
+        $ <%= number_field_tag 'investment_amount', nil, min: 1, required: true %>
         <%= submit_tag 'Commit Investment' %>
       <% end %>
     </div>
@@ -20,7 +20,7 @@
     <div class="amount-input-area">
       <%= form_tag repay_loan_confirmation_path(id: @active_loan.id), method: :post do %>
         <%= label_tag 'Enter repayment amount' %>
-        $ <%= number_field_tag 'repayment_amount', nil, min: 1 %>
+        $ <%= number_field_tag 'repayment_amount', nil, min: 1, required: true %>
         <%= submit_tag 'Make repayment' %>
       <% end %>
     </div>
