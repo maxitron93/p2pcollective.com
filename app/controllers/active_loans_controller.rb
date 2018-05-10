@@ -7,7 +7,12 @@ class ActiveLoansController < ApplicationController
   def index
     @status = params[:status]
 
-    @active_loans = ActiveLoan.where(status: params[:status]).where.not(user_id: current_user.id)
+    @start = params[:start].to_i
+    @finish = params[:finish].to_i
+
+    @active_loans = (ActiveLoan.where(status: params[:status]).where.not(user_id: current_user.id))[@start..@finish]
+
+    @total_count = (ActiveLoan.where(status: params[:status]).where.not(user_id: current_user.id)).count
 
     render layout: "portfolios"
   end

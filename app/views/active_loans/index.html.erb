@@ -5,6 +5,18 @@
   <div class="back-button">
   <%= link_to "Back", root_path %>
   </div>
+  
+  <% if @start >= 10 %> 
+    <div class="loan-nav-button left-button top-area">
+      <%= link_to "<--", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %>
+    </div>
+  <% end %>
+
+  <% if @finish <= @total_count %>
+    <div class="loan-nav-button right-button top-area">
+      <%= link_to "-->", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %>
+    </div>
+  <% end %>
 
   <% @active_loans.each do |active_loan| %>
     
@@ -25,6 +37,18 @@
     </div>
     <% end %>
 
+  <% end %>
+
+  <% if @start >= 10 %>
+    <div class="loan-nav-button left-button top-area">
+      <%= link_to "<--", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %>
+    </div>
+  <% end %>
+
+  <% if @finish <= @total_count %>
+    <div class="loan-nav-button right-button top-area">
+      <%= link_to "-->", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %>
+    </div>
   <% end %>
  
 </section>
