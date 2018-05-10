@@ -1,9 +1,11 @@
 class LoanApplicationsController < ApplicationController
   require 'check_login'
   require 'check_user'
+  require 'check_loan_status'
   before_action :require_login
   before_action :compare_user_id, only: [:edit, :update, :destroy, :submit, :show]
   before_action :set_loan_application, only: [:show, :edit, :update, :destroy]
+  before_action :check_status, only: [:edit, :update, :destroy, :submit]
   
   
   # GET /loan_applications
