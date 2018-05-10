@@ -127,35 +127,35 @@ cities_and_states = ([
 
 purposes = ([
   {
-    loan_category_id: 33, #25
+    loan_category_id: 41, #25
     purpose_description: "I have just started a new job and I need a new car. It is a reasonably priced car and not luxurious at all. It's a used sedan with good fuel economy that will let me do my job more productively."
   },
   {
-    loan_category_id: 34, #26
+    loan_category_id: 42, #26
     purpose_description: "I own a small business and need some funds to renovate my interior. I have been in business for 12 years and the decoration is becoming outdated. The new interior will attract more cutomers and improve my business."
   },
   {
-    loan_category_id: 35, #27
+    loan_category_id: 43, #27
     purpose_description: "I haven't had a holiday in years and I really need one. I'm planning to go to travel around South America for three months. I have spent the last two years learning Spanish and am really looking forward to this trip!"
   },
   {
-    loan_category_id: 36, #28
+    loan_category_id: 44, #28
     purpose_description: "My car broke down and I need some funds to get it repaired. It's a 6-year-old vehicle and just came out of warranty. I need the vehicle for my work. I will take better care of my car in the future."
   },
   {
-    loan_category_id: 37, #29
+    loan_category_id: 45, #29
     purpose_description: "A family member came down with a serious illness recently and we need some money to pay her medical bills. It has been a hard month for us and the funds would be big big burden off our shoulders. We are good to pay it back."
   },
   {
-    loan_category_id: 38, #30
+    loan_category_id: 46, #30
     purpose_description: "My wife and I would like to removate our kitchen. It's a 1960s house with all the original finishings and it has become very dated. We have done all the design and planning. Now all we need is the funds to do it!"
   },
   {
-    loan_category_id: 39, #31
+    loan_category_id: 47, #31
     purpose_description: "Out family just moved into a new house and we need some furniture. We are planning to furnish with Ikea and only get the essentials. We have itemised everything we need and just need some short-term funding to make it happen."
   },
   {
-    loan_category_id: 40, #32
+    loan_category_id: 48, #32
     purpose_description: "My fiance wants a grand wedding and I need some funds to make it happen. Weddings are a once-in-a-life experience and we want it to be a day we'll never remember! We would really appreciate your suppot!"
   }
 ])
@@ -174,7 +174,7 @@ emails.each do |email|
   weekly_income = (rand(50..500) * 1000)
   weekly_expenses = (weekly_income.to_f * (rand(50..90).to_f / 100.0))
   work_gap_months = rand (1..12)
-  employment_type_id = rand(25..30) #rand(19..24)
+  employment_type_id = rand(31..36) #rand(19..24)
   individual_purpose = purposes.sample
 
   # Create first loan application
