@@ -38,9 +38,11 @@ class LoanApplicationsController < ApplicationController
   # POST /loan_applications
   # POST /loan_applications.json
   def create
+    
     @loan_application = LoanApplication.new(loan_application_params)
     @loan_application.user_id = current_user.id
-    
+    custom_params = loan_application_params
+
     if params[:submit]
       @loan_application.status = "being assessed"
     else
@@ -50,6 +52,7 @@ class LoanApplicationsController < ApplicationController
     @loan_application.loan_amount = (params[:loan_application].require(:loan_amount).to_i * 100)
     @loan_application.weekly_income = (params[:loan_application].require(:weekly_income).to_i * 100)
     @loan_application.weekly_expenses = (params[:loan_application].require(:weekly_expenses).to_i * 100)
+    
 
     respond_to do |format|
       if @loan_application.save
@@ -78,6 +81,7 @@ class LoanApplicationsController < ApplicationController
       end
 
       if @loan_application.update(loan_application_params)
+        @loan_application.update(loan_amount: params[:loan_application].require(:loan_amount).to_i * 100, weekly_income: params[:loan_application].require(:weekly_income).to_i * 100, weekly_expenses: params[:loan_application].require(:weekly_expenses).to_i * 100)
         if params[:submit]
           format.html { redirect_to my_loan_applications_path, notice: 'Loan application was successfully submitted.' }
         else
@@ -113,6 +117,6 @@ class LoanApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def loan_application_params
-      params.require(:loan_application).permit(:first_name, :last_name, :loan_amount, :loan_term, :purpose, :loan_category_id, :street_address, :city, :state, :postcode, :employment_type_id, :weekly_income, :weekly_expenses, :work_gap_months, :license, :pay_slip)
+      params.require(:loan_application).permit(:first_name, :last_name, :loan_term, :purpose, :loan_category_id, :street_address, :city, :state, :postcode, :employment_type_id, :work_gap_months, :license, :pay_slip)
     end
 end
