@@ -40,17 +40,17 @@
 
     <div class="field">
       <%= form.label :postcode %>
-      <%= form.number_field :postcode, id: :loan_application_postcode, value: nil, required: true %>
+      <%= form.number_field :postcode, id: :loan_application_postcode, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :"Loan amount (up to $50,000)" %>
-      $ <%= form.number_field :loan_amount, id: :loan_application_loan_amount, value: nil, min: 1, max: 50000, required: true %>
+      $ <%= form.number_field :loan_amount, id: :loan_application_loan_amount, min: 1, max: 50000, required: true %>
     </div>
 
     <div class="field">
       <%= form.label "Loan term (up to 60 months)" %>
-      <%= form.number_field :loan_term, id: :loan_application_loan_term, value: nil, min: 1, max: 60, required: true %>
+      <%= form.number_field :loan_term, id: :loan_application_loan_term, min: 1, max: 60, required: true %>
     </div>
 
     <div class="field">
@@ -70,17 +70,17 @@
 
     <div class="field">
       <%= form.label :weekly_income %>
-      $ <%= form.number_field :weekly_income, id: :loan_application_weekly_income, value: nil, min: 1, max: 100000, required: true %>
+      $ <%= form.number_field :weekly_income, id: :loan_application_weekly_income, min: 1, max: 100000, required: true %>
     </div>
 
     <div class="field">
       <%= form.label :weekly_expenses %>
-      $ <%= form.number_field :weekly_expenses, id: :loan_application_weekly_expenses, value: nil, min: 1, max: 100000, required: true %>
+      $ <%= form.number_field :weekly_expenses, id: :loan_application_weekly_expenses, min: 1, max: 100000, required: true %>
     </div>
 
     <div class="field">
       <%= form.label "Months unemployed in the last 2 years" %>
-      <%= form.number_field :work_gap_months, id: :loan_application_work_gap_months, value: nil, min: 0, max: 24, required: true %>
+      <%= form.number_field :work_gap_months, id: :loan_application_work_gap_months, min: 0, max: 24, required: true %>
     </div>
 
     <div class="field">
