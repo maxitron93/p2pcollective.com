@@ -7,9 +7,9 @@
   </div>
   
   <div class="top-navigation-buttons">
-    <% if @start >= 10 %> 
+    <% if @start >= 12 %> 
       <div class="loan-nav-button left-button top-area">
-        <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %></strong>
+        <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 12), finish: (@finish - 12)) %></strong>
       </div>
     <% end %>
 
@@ -22,9 +22,9 @@
 
     <p class="showing-notice">showing <%= (@start + 1) %> to <%= (final + 1) %> of <%= @total_count %></p>
 
-    <% if @finish <= @total_count %>
+    <% if @finish + 1 < @total_count %>
       <div class="loan-nav-button right-button top-area">
-        <strong><%= link_to ">", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %></strong>
+        <strong><%= link_to ">", active_loans_index_path(status: "unfunded", start: (@start + 12), finish: (@finish + 12)) %></strong>
       </div>
     <% end %>
   </div>

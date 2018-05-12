@@ -214,3 +214,61 @@ footer {
   background: rgb(16, 109, 3);
   text-align: center;
 }
+/**********************************************************************************/
+/****************************DESKTOP VIEW******************************/
+/**********************************************************************************/
+@media screen and (min-width: 800px)  {
+  body {
+    max-width: 950px;
+  }
+
+  /*****************************************/
+  /********LOANS BEING ASSESSED SECTION********/
+  /*****************************************/
+
+  .loans-awaiting-assessment {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid rgb(16, 109, 3);
+    border-radius: 15px;
+  }
+
+  .loans-awaiting-assessment .one-loan {
+    margin-top: 30px;
+  }
+  
+  .loans-awaiting-assessment .column-created-at {
+    font-size: 110%;
+  }
+  
+  .loans-awaiting-assessment .column-purpose {
+    font-size: 110%;
+  }
+  
+  .loans-awaiting-assessment .column-amount {
+    font-size: 110%;
+  }
+
+  /*****************************************/
+  /************ASSES ONE SECTION************/
+  /*****************************************/
+  .secion-assess-one-loan {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid rgb(16, 109, 3);
+    border-radius: 15px;
+  }
+
+  .secion-assess-one-loan .one-loan-assessment {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px)  {
+  body {
+    max-width: 1300px;
+  }
+}

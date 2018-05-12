@@ -41,7 +41,6 @@ header {
   border-bottom: 1px solid #F2F2F2;
 }
 
-
 header #home-link-in-header {
   display: inline-block;
   margin: 5px 0;
@@ -234,6 +233,7 @@ header .navigation a {
 .section-add-withdraw-cash {
   position: relative;
   width: 80%;
+  max-width: 400px;
   margin: 70px auto 110px auto;
   height: 400px;
 }
@@ -251,7 +251,7 @@ header .navigation a {
 .section-add-withdraw-cash .input-area {
   position: relative;
   padding: 15px;
-  border: 1px solid #2F80ED;
+  border: 2px solid #2F80ED;
   border-radius: 7px;
   top: 50%;
   transform: translate(0%, -50%);
@@ -329,6 +329,7 @@ header .navigation a {
 .section-my-loans p a {
   display: block;
   width: 65%;
+  max-width: 350px;
   padding: 7px 15px;
   margin: 0 auto;
   background: #2F80ED;
@@ -340,7 +341,7 @@ header .navigation a {
 }
 
 .section-my-loans .back-button a {
-  width: 30%;
+  width: 130px;
   text-align: center;
 }
 
@@ -351,6 +352,7 @@ header .navigation a {
 .section-my-loans .user-note {
   color: rgb(116, 0, 0);
   width: 65%;
+  max-width: 350px;
   margin: -20px auto 0 auto;
 }
 
@@ -361,6 +363,7 @@ header .navigation a {
   position: relative;
   margin: 40px auto 110px auto;
   width: 70%;
+  max-width: 400px;
   height: 400px;
 }
 
@@ -368,7 +371,7 @@ header .navigation a {
   position: absolute;
   width: 100%;
   top: 20%;
-  border: 1px solid #2F80ED;
+  border: 2px solid #2F80ED;
   padding: 20px 20px;
   text-align: center;
   border-radius: 7px;
@@ -700,7 +703,7 @@ header .navigation a {
 }
 
 /*****************************************/
-/*********MT ACTIVE LOANS SECTION*********/
+/*********MY ACTIVE LOANS SECTION*********/
 /*****************************************/
 .section-my-active-loans {
   margin: 30px auto 110px auto;
@@ -1198,4 +1201,364 @@ footer {
   height: 80px;
   background: #2F80ED;
   text-align: center;
+}
+
+/**********************************************************************************/
+/****************************DESKTOP VIEW******************************/
+/**********************************************************************************/
+
+@media screen and (min-width: 800px)  {
+  body {
+    max-width: 950px;
+  }
+  
+  /*****************************************/
+  /*************HEADER***************/
+  /*****************************************/
+  header .navigation {
+    width: 75%;
+  }
+  
+  header .navigation label {
+    display: none;
+    // color: #F2F2F2;
+    // font-size: 300%;
+    // line-height: 80px;
+    // margin-right: 10%;
+    // cursor: pointer;
+    // border: none;
+    // text-decoration: none;
+  }
+  
+  .menu {
+    display: block;
+    margin: 25px 0;
+  }
+  
+  header .navigation a {
+    // color: #F2F2F2;
+    display: inline-block;
+    // text-decoration: none;
+    width: auto;
+    margin: 0 2.5%;
+    // font-size: 120%;
+    line-height: 30px;
+    // text-align: center;
+    // background: #2F80ED;
+    border-bottom: none;
+    transform: translate(0, 0);
+  }
+
+  header .navigation a:nth-last-of-type(1) {
+    margin-right: 5%;
+  }
+
+  /*****************************************/
+  /*************ACCOUNTS SECTION***************/
+  /*****************************************/
+  .section-accounts {
+    margin-top: 60px;
+    padding: 0 30px;
+    width: 450px;
+    border: 2px solid #2F80ED;
+    border-radius: 15px; 
+  }
+
+  /*****************************************/
+  /*************ACCOUNTS HISTORY SECTION***************/
+  /*****************************************/
+  .section-history-section {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .section-history-section .one-transaction {
+    margin-top: 30px;
+  }
+  
+  .section-history-section .column-date,
+  .section-history-section .column-date p {
+    font-size: 110%;
+  }
+  
+  .section-history-section .column-amount,
+  .section-history-section .column-amount p {
+    font-size: 110%;
+  }
+  
+  .section-history-section .column-balance,.section-history-section .column-balance p {
+    font-size: 110%;
+  }
+  
+  .section-history-section .row-description,
+  .section-history-section .row-description p {
+    font-size: 100%;
+  }
+
+  /*****************************************/
+  /*************MY LOANS SECTION***************/
+  /*****************************************/
+  .section-my-loans p {
+    margin: 35px 0;
+  }
+
+  .section-my-loans {
+    margin: 60px auto 110px auto;
+  }
+
+  /*****************************************/
+  /*********MT INVESTMENTS SECTION*********/
+  /*****************************************/
+  .section-my-investments {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .section-my-investments h2 {
+    margin-top: 20px;
+  }
+
+  .section-my-investments .one-investment {
+    margin: 40px auto 0 auto;
+  }
+
+  .section-my-investments .column-created-at {
+    font-size: 110%;
+  }
+
+  .section-my-investments .column-amount {
+    font-size: 110%;
+  }
+
+  .section-my-investments .column-interest-rate {
+    font-size: 110%;
+  }
+
+  .section-my-investments .fourth-column {
+    font-size: 110%;
+  }
+
+  /*****************************************/
+  /*********MY ACTIVE LOANS SECTION*********/
+  /*****************************************/
+  .section-my-active-loans {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .section-my-active-loans h2 {
+    margin-top: 20px;
+  }
+  .section-my-active-loans .one-active-loan {
+    font-size: 110%;
+  }
+
+  .section-my-active-loans .column-created-at {
+    font-size: 110%;
+  }
+
+  .section-my-active-loans .column-purpose {
+    font-size: 110%;
+  }
+
+  .section-my-active-loans .column-amount {
+    font-size: 110%;
+  }
+
+  .section-my-active-loans .fourth-column {
+    font-size: 110%;
+  }
+
+  /*****************************************/
+  /*************NEW/EDIT LOAN APPLICAION***************/
+  /*****************************************/
+  .section-loan-application {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .loan-form {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  /*****************************************/
+  /****LOANS SAVED/BEING ASSESSED SECTION****/
+  /*****************************************/
+  .section-application-index {
+    margin-top: 60px;
+    width: 650px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .section-application-index h2 {
+    margin-top: 0px;
+  }
+
+  .section-application-index .whole-table {
+    width: 80%;
+  }
+
+  .section-application-index .one-loan {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .section-application-index .column-created-at {
+    font-size: 110%;
+  }
+
+  .section-application-index .column-purpose {
+    font-size: 110%;
+  }
+
+  .section-application-index .column-amount {
+    font-size: 110%;
+  }
+
+  /*****************************************/
+  /*********VIEW ONE APPLICAION SECTION*********/
+  /*****************************************/
+  .view-one-loan {
+    margin-top: 60px;
+    width: 500px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .view-one-loan .one-loan-application {
+    width: 80%;
+  }
+
+  /*****************************************/
+  /************ACTIVE LOAN SHOW PAGE************/
+  /*****************************************/
+  .section-one-active-loan {
+    margin-top: 60px;
+    width: 500px;
+    padding: 20px 0 30px 0;
+    border: 2px solid #2F80ED;
+    border-radius: 15px;
+  }
+
+  .section-one-active-loan .amount-input-area {
+    width: 60%;
+  }
+
+  .section-one-active-loan .one-field {
+    margin: 15px 9%;
+    width: 30%
+  }
+
+  .section-one-active-loan .fullwidth {
+    width: 80%;
+  }
+
+  .section-one-active-loan .one-field p {
+    padding: 2px 0;
+  }
+
+  /*****************************************/
+  /*************BROWSE INVESTMENTS SECTION***************/
+  /*****************************************/
+  .section-browse-investments {
+    width: 90%;
+  }
+
+  .section-browse-investments .top-navigation-buttons {
+    margin-bottom: 15px;
+  }
+  .section-browse-investments .top-navigation-buttons .left-button {
+    width: 60px;
+    left: 29%;
+  }
+
+  .section-browse-investments .top-navigation-buttons .right-button {
+    width: 60px;
+    right: 29%;
+  }
+
+  .section-browse-investments .one-active-loan {
+    display: inline-block;
+    width: 46.7%;
+    margin: 30px 1.5%;
+  }
+
+  .section-browse-investments .bottom-navigation-buttons {
+    margin-top: 15px;
+    margin-bottom: 120px;
+  }
+
+  .section-browse-investments .bottom-navigation-buttons .left-button {
+    width: 60px;
+    left: 29%;
+  }
+
+  .section-browse-investments .bottom-navigation-buttons .right-button {
+    width: 60px;
+    right: 29%;
+  }
+
+  /*****************************************/
+  /*************FOOTER***************/
+  /*****************************************/
+  footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 80px;
+    background: #2F80ED;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px)  {
+  body {
+    max-width: 1300px;
+  }
+
+  /*****************************************/
+  /*************BROWSE INVESTMENTS SECTION***************/
+  /*****************************************/
+  .section-browse-investments .one-active-loan {
+    width: 30%;
+  }
+
+  .section-browse-investments .bottom-navigation-buttons {
+    margin-top: 15px;
+    margin-bottom: 120px;
+  }
+
+  .section-browse-investments .top-navigation-buttons .left-button {
+    left: 35%;
+  }
+
+  .section-browse-investments .top-navigation-buttons .right-button {
+    right: 35%;
+  }
+
+  .section-browse-investments .bottom-navigation-buttons .left-button {
+    width: 60px;
+    left: 35%;
+  }
+
+  .section-browse-investments .bottom-navigation-buttons .right-button {
+    width: 60px;
+    right: 35%;
+  }
 }
