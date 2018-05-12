@@ -71,10 +71,12 @@ header .navigation {
 
 header .navigation label {
   color: #F2F2F2;
-  font-size: 200%;
+  font-size: 300%;
   line-height: 80px;
   margin-right: 10%;
   cursor: pointer;
+  border: none;
+  text-decoration: none;
 }
 
 header .navigation input {
