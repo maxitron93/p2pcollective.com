@@ -5,7 +5,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  /* border: 0.2px solid rgb(255, 151, 151); */
+  // border: 0.2px solid rgb(255, 151, 151);
   border: 1px solid transaprent;
   font-family: 'Dosis', sans-serif;
   font-size: 16px;
@@ -34,6 +34,7 @@ section {
 /*****************************************/
 header {
   background: #2F80ED;
+  height: 110px;
 }
 
 .logo {
@@ -62,6 +63,54 @@ header span a {
   color: #4F4F4F;
   border-radius: 5px;
   text-decoration: none;
+}
+
+header .navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  text-align: end;
+  z-index: 1;
+}
+
+header .navigation label {
+  color: #F2F2F2;
+  font-size: 300%;
+  line-height: 60px;
+  margin-right: 10%;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+header .navigation input {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+header .navigation a:nth-of-type(1) {
+  margin-top: 51px;
+}
+
+header .navigation a {
+  color: #F2F2F2;
+  display: block;
+  text-decoration: none;
+  width: 200%;
+  font-size: 120%;
+  line-height: 60px;
+  text-align: center;
+  background: #2F80ED;
+  border-bottom: 1px solid #F2F2F2;
+  transform: translate(-50%, 0);
+}
+
+#toggle:checked + .menu {
+  display: block;
 }
 
 /*****************************************/
@@ -165,7 +214,6 @@ footer {
   /*****************************************/
   /*************HEADER***************/
   /*****************************************/
-
   header span {
     display: inline-block;
     width: 200px;
@@ -185,6 +233,14 @@ footer {
     color: #4F4F4F;
     border-radius: 5px;
     text-decoration: none;
+  }
+  
+  header .navigation label {
+    line-height: 110px;
+  }
+  
+  header .navigation a:nth-of-type(1) {
+    margin-top: 1px;
   }
 
   /*****************************************/
@@ -209,5 +265,30 @@ footer {
 
   .one-active-loan {
     width: 30%;
-  }  
+  }
+  
+  header .navigation label {
+    display: none;
+  }
+  
+  .menu {
+    display: inline-block;
+    width: 100%;
+    padding: 40px 0;
+  }
+  
+  header .navigation a:last-of-type {
+    margin-right: 50px;
+  }
+  
+  header .navigation a {
+    display: inline-block;
+    width: auto;
+    font-size: 150%;
+    margin: 0px 20px 0px 20px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: none;
+    transform: translate(0, 0);
+  }
 }

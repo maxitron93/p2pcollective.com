@@ -13,12 +13,30 @@
 
   <body>
     <section class="header-section">
+
       <header>
+
         <p class="logo">p2pcollective</p>
         <p class="nav-icon"></p>
         <span><%= link_to "Login", new_user_session_path %></span>
         <span><%= link_to "Register", new_user_registration_path %></span>
+
+        <div class=navigation>
+          
+          <label for="toggle">&#8801;</label>
+          <input type="checkbox" id="toggle">
+
+          <div class="menu">
+            <%= link_to "Home", root_path%>
+            <%= link_to "How this works", how_this_works_path %>
+            <%= link_to "About us", about_us_path %>
+            <%= link_to "Contact us", contact_us_path %>
+          </div>
+          
+        </div>
+
       </header>
+
     </section>
 
     <%= yield %>

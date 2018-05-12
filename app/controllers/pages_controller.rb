@@ -11,4 +11,19 @@ class PagesController < ApplicationController
     render layout: "pages"
   end
 
+  def how_this_works
+
+    render layout: "pages"
+  end
+
+  def about_us
+
+    render layout: "pages"
+  end
+
+  def contact_us
+
+    render layout: "pages"
+  end
+
 end

@@ -42,8 +42,6 @@ Rails.application.routes.draw do
   
   # Routes for guest users
   get '/how_this_works', to: 'pages#how_this_works', as: 'how_this_works'
-  get '/borrow_money', to: 'pages#borrow_money', as: 'borrow_money'
-  get '/become_an_investor', to: 'pages#become_an_investor', as: 'become_an_investor'
   get '/about_us', to: 'pages#about_us', as: 'about_us'
   get '/contact_us', to: 'pages#contact_us', as: 'contact_us'
 
