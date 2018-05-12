@@ -14,8 +14,23 @@
   <body>
     <section class="section-header">
       <header>
-        <%= link_to "p2pcollective", root_path %>
+        <%= link_to "p2pcollective", root_path, id: "home-link-in-header" %>
         <p class="user-email"><%= current_user.email %></p>
+        
+        <div class=navigation>
+          
+          <label for="toggle">&#9776;</label>
+          <input type="checkbox" id="toggle">
+
+          <div class="menu">
+            <%= link_to "My portfolio", root_path%>
+            <%= link_to "Browse investments", active_loans_index_path(status: "unfunded", start: 0, finish: 9) %>
+            <%= link_to "My loan applications", my_loan_applications_path %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </div>
+          
+        </div>
+
       </header>
     </section>
     
@@ -28,5 +43,6 @@
       <footer>
       </footer>
     </section>
+
   </body>
 </html>

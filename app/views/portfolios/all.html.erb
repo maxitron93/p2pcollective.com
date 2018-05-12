@@ -1,5 +1,5 @@
 <section class="section-accounts">
-  <h2>My accounts</h2>
+  <h2>My portfolio</h2>
 
   <div class="cash-account account-div">
     <p class="account"><%= link_to "Cash", account_history_path(id: @cash_account_id) %></p>
@@ -55,20 +55,6 @@
       <p><%= link_to "Defaulted loans:", account_history_path(id: @defaulted_loans_account_id) %> <%= number_to_currency(@defaulted_loans, percision: 2) %></p>
     </div>
   <% end %>
-  
-  <div class="all-navigation-buttons">
-    <div class="navigation-button">
-      <%= link_to "Browse investments", active_loans_index_path(status: "unfunded", start: 0, finish: 9) %>
-    </div>  
-
-    <div class="navigation-button">
-      <%= link_to "My loan applications", my_loan_applications_path %>
-    </div>
-
-    <div class="navigation-button">
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    </div>
-  </div>
 
 </section>
 

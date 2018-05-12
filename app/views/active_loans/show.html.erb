@@ -47,6 +47,11 @@
       <p><strong>Percent repaid:</strong></p>
       %<%= percent_repaid %>
     </div>
+
+    <div class="one-field">
+      <p><strong>Loan outstanding:</strong></p>
+      <%= number_to_currency((@active_loan.opening_balance.to_f - total_repaid) / 100, percision: 2)  %>
+    </div>
   <% else %>
 
     <% total_funded = 0 %>
@@ -58,6 +63,11 @@
     <div class="one-field"> 
       <p><strong>Percent funded:</strong></p>
       %<%= percent_funded %>
+    </div>
+
+    <div class="one-field"> 
+      <p><strong>Opportunity remaining:</strong></p>
+      <%= number_to_currency((@active_loan.opening_balance.to_f - total_funded) / 100, percision: 2) %>
     </div>
   <% end %>
 
