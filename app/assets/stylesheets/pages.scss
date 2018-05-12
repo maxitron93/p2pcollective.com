@@ -35,6 +35,7 @@ section {
 header {
   background: #2F80ED;
 }
+
 .logo {
   display: inline-block;
   width: 49.5%;
@@ -150,4 +151,63 @@ footer {
   height: 80px;
   background: #2F80ED;
   text-align: center;
+}
+
+/**********************************************************************************/
+/****************************DESKTOP VIEW******************************/
+/**********************************************************************************/
+
+@media screen and (min-width: 800px)  {
+  body {
+    max-width: 950px;
+  }
+
+  /*****************************************/
+  /*************HEADER***************/
+  /*****************************************/
+
+  header span {
+    display: inline-block;
+    width: 200px;
+  }
+
+  header span:nth-of-type(1) {
+    margin-left: 4.2%
+  }
+
+  header span a {
+    display: inline-block;
+    font-size: 120%;
+    padding: 5px 0px;
+    text-align: center;
+    width: 90%;
+    background: #F2F2F2;
+    color: #4F4F4F;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  /*****************************************/
+  /*************GUEST HOME PAGE***************/
+  /*****************************************/
+  .loans-section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .one-active-loan {
+    display: inline-block;
+    width: 46.7%;
+    margin: 30px 1.5%;
+  }
+}
+
+@media screen and (min-width: 1200px)  {
+  body {
+    max-width: 1300px;
+  }
+
+  .one-active-loan {
+    width: 30%;
+  }  
 }
