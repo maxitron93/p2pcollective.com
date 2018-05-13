@@ -190,6 +190,39 @@ header .navigation a {
 }
 
 /*****************************************/
+/**********HOW THIS WORKS SECTION************/
+/*****************************************/
+.section-how-this-works {
+  width: 85%;
+  margin: 30px auto 30px auto;
+}
+.section-how-this-works .disclaimer{
+  color: rgb(161, 0, 0);
+}
+
+.section-how-this-works .disclaimer a {
+  text-decoration: none;
+  color: #2F80ED;
+  border-bottom: 1px solid #2F80ED;
+}
+
+.section-how-this-works h2 {
+  text-align: center;
+  font-size: 200%;
+  margin: 20px 0 20px 0;
+}
+
+.section-how-this-works h3 {
+  font-size: 130%;
+  margin-top: 20px;
+  color: #2F80ED;
+}
+
+.section-how-this-works h4 {
+  margin-top: 20px;
+}
+
+/*****************************************/
 /*************FOOTER***************/
 /*****************************************/
 footer {
@@ -254,6 +287,27 @@ footer {
     display: inline-block;
     width: 46.7%;
     margin: 30px 1.5%;
+  }
+
+  /*****************************************/
+  /**********HOW THIS WORKS SECTION************/
+  /*****************************************/
+  .section-how-this-works {
+    width: 75%;
+    margin: 60px auto 60px auto;
+  }
+
+  .section-how-this-works h2 {
+    font-size: 220%
+  }
+
+  .section-how-this-works h3 {
+    font-size: 140%
+  }
+
+  .section-how-this-works h4,
+  .section-how-this-works p {
+    font-size: 110%
   }
 }
 

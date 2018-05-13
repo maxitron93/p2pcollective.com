@@ -1,22 +1,27 @@
 <section class="loans-section">
+    
     <p class="promotion"><%= @all_funded_active_loans_count%> opportunities to invest in!</p>
     <p class="promotion"><%= number_to_currency(@total_amount, precision: 0) %> in loans funded!</p>
     <p class="promotion"> Log in to find out more!</p>
+    
     <% @funded_active_loans.each do |active_loan| %>
+      
       <div class="one-active-loan">
-      <% relevant_investments = Investment.where(active_loan_id: active_loan.id) %>
-        <% amount_invested_so_far = 0.0 %>
-        <% relevant_investments.each do |investment| %>
-        <% amount_invested_so_far += investment.opening_balance %>
-      <% end %>
-      <% funded_percentage = amount_invested_so_far / active_loan.opening_balance %>
-      <h3><%= active_loan.category %></h3>
-      <p class="interest-rate"><%= active_loan.interest_rate %>%</p>
-      <p class="loan-amount"><%= number_to_currency((active_loan.opening_balance / 100), precision: 0) %></p>
-      <p class="funded-percentage"><%= (funded_percentage * 100).to_i %>% funded</p>
-      <p class="loan-term"><%= active_loan.loan_term %> months</p>
-      <p class="employment">Employmed as <%= active_loan.employment_type %></p>
-       </div>
+        <% relevant_investments = Investment.where(active_loan_id: active_loan.id) %>
+          <% amount_invested_so_far = 0.0 %>
+          <% relevant_investments.each do |investment| %>
+          <% amount_invested_so_far += investment.opening_balance %>
+        <% end %>
+
+        <% funded_percentage = amount_invested_so_far / active_loan.opening_balance %>
+        <h3><%= active_loan.category %></h3>
+        <p class="interest-rate"><%= active_loan.interest_rate %>%</p>
+        <p class="loan-amount"><%= number_to_currency((active_loan.opening_balance / 100), precision: 0) %></p>
+        <p class="funded-percentage"><%= (funded_percentage * 100).to_i %>% funded</p>
+        <p class="loan-term"><%= active_loan.loan_term %> months</p>
+        <p class="employment">Employmed as <%= active_loan.employment_type %></p>
+      </div>
+      
     <% end %>
  
 </section>

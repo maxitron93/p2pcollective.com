@@ -1,5 +1,11 @@
 <section class="section-browse-investments">
 
+  <% if @total_count < @finish %>
+    <% final = (@total_count - 1) %>
+  <% else %>
+    <% final = @finish %>
+  <% end %>
+
   <h2>Browse investments</h2>
 
   <div class="back-button">
@@ -12,13 +18,6 @@
         <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 12), finish: (@finish - 12)) %></strong>
       </div>
     <% end %>
-
-    <% if @total_count < @finish %>
-      <% final = (@total_count - 1) %>
-    <% else %>
-      <% final = @finish %>
-    <% end %>
-  
 
     <p class="showing-notice">showing <%= (@start + 1) %> to <%= (final + 1) %> of <%= @total_count %></p>
 
@@ -51,23 +50,17 @@
   <% end %>
 
   <div class="bottom-navigation-buttons">
-    <% if @start >= 10 %>
-      <div class="loan-nav-button left-button top-area">
-        <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 10), finish: (@finish - 10)) %></strong>
+    <% if @start >= 12 %> 
+      <div class="loan-nav-button left-button bottom-area">
+        <strong><%= link_to "<", active_loans_index_path(status: "unfunded", start: (@start - 12), finish: (@finish - 12)) %></strong>
       </div>
-    <% end %>
-
-    <% if @total_count < @finish %>
-      <% final = (@total_count - 1) %>
-    <% else %>
-      <% final = @finish %>
     <% end %>
 
     <p class="showing-notice">showing <%= (@start + 1) %> to <%= (final + 1) %> of <%= @total_count %></p>
 
-    <% if @finish <= @total_count %>
-      <div class="loan-nav-button right-button top-area">
-        <strong><%= link_to ">", active_loans_index_path(status: "unfunded", start: (@start + 10), finish: (@finish + 10)) %></strong>
+    <% if @finish + 1 < @total_count %>
+      <div class="loan-nav-button right-button bottom-area">
+        <strong><%= link_to ">", active_loans_index_path(status: "unfunded", start: (@start + 12), finish: (@finish + 12)) %></strong>
       </div>
     <% end %>
   </div>
