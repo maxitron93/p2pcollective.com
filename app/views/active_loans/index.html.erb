@@ -1,6 +1,6 @@
 <section class="section-browse-investments">
 
-  <% if @total_count < @finish %>
+  <% if @total_count <= @finish %>
     <% final = (@total_count - 1) %>
   <% else %>
     <% final = @finish %>
