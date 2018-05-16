@@ -1,4 +1,14 @@
-# README
+# Context
+
+This is my first Rails app. I built it over the space of two weeks as part of my course. The project purpose was to create a two-sided marketplace with Ruby and the Rails framework. I decided to build a peer-to-peer lending platform because I suspected it would require a variety of different models and controllers, and so would be good web app development practice.
+
+I managed to complete the app with most of the basic features. Users can add and withdraw cash, create loans, invest in other users' loans, and repay their outstanding loans. I originally had other features in mind but ran out of time to implement them.
+
+I am happy with the outcome of the project, but next time I can improve through:
+- Better implementation of associations between tables in the database
+- Improving the efficiency of my database queries
+- Better structuring of my layouts and views so I don't have to repeat a lot of CSS
+- Limiting database queries to the controller, and not query the database from the views
 
 # [p2pcollective.com](http://www.p2pcollective.com)
 
@@ -74,7 +84,6 @@ There are four main sections of the database:
 ### For future development:
 
 - Search functionality for investments
-- Styling for desktop view
 - Ability for app to track interest charges
 - Ability for app to send emails
 - Ability for app to automatically charge borrowers and pay investors
