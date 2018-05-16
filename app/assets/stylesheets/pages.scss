@@ -223,6 +223,21 @@ header .navigation a {
 }
 
 /*****************************************/
+/**********ABOUT US************/
+/*****************************************/
+.section-about-us {
+  width: 85%;
+  max-width: 465px;
+  margin: 30px auto 30px auto;
+}
+
+.section-about-us h2 {
+  text-align: center;
+  font-size: 200%;
+  margin: 20px 0 20px 0;
+}
+
+/*****************************************/
 /*************FOOTER***************/
 /*****************************************/
 footer {
@@ -307,6 +322,22 @@ footer {
 
   .section-how-this-works h4,
   .section-how-this-works p {
+    font-size: 110%
+  }
+
+  /*****************************************/
+  /**********ABOUT US************/
+  /*****************************************/
+  .section-about-us {
+    margin: 60px auto 60px auto;
+  }
+
+  .section-about-us h2 {
+    font-size: 220%
+  }
+
+  .section-about-us p,
+  .section-about-us a {
     font-size: 110%
   }
 }
