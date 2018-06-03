@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180505042237) do
+ActiveRecord::Schema.define(version: 20180603061020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "accounts", force: :cascade do |t|
     t.bigint "user_id"
@@ -38,6 +39,19 @@ ActiveRecord::Schema.define(version: 20180505042237) do
     t.string "employment_type"
     t.integer "work_gap_months"
     t.index ["user_id"], name: "index_active_loans_on_user_id"
+  end
+
+  create_table "charts", force: :cascade do |t|
+    t.string "chart"
+    t.text "project_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "show_main_gridlines"
+    t.boolean "show_sub_gridlines"
+    t.integer "row_spacing"
+    t.hstore "rows", default: [], array: true
   end
 
   create_table "employment_types", force: :cascade do |t|

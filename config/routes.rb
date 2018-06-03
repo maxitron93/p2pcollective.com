@@ -47,6 +47,10 @@ Rails.application.routes.draw do
 
   # Routes for stripe
   resources :charges
+
+  # Routes for the plan api
+  get '/api/get_chart/:chart', to: 'apis#get_chart'
+  post '/api/save_chart', to: 'apis#save_chart'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

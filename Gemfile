@@ -10,6 +10,7 @@ gem 'stripe'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "shrine", "~> 2.0"
 gem 'activesupport', '~> 5.1', '>= 5.1.6'
+gem 'rack-cors', require: 'rack/cors'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
