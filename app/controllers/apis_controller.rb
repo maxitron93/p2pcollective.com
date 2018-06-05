@@ -4,7 +4,7 @@ class ApisController < ApplicationController
   def get_chart
     chart = Chart.where(chart: params[:chart]).first
     if chart == nil
-      chart = Chart.where(chart: "febb1bcf023e1f68").first
+      chart = Chart.where(chart: "85e96f12bd5102e7").first
     end
     render json: chart
   end
