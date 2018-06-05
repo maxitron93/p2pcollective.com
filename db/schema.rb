@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180603061020) do
+ActiveRecord::Schema.define(version: 20180604232341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,11 @@ ActiveRecord::Schema.define(version: 20180603061020) do
     t.text "project_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.boolean "show_main_gridlines"
-    t.boolean "show_sub_gridlines"
     t.integer "row_spacing"
     t.hstore "rows", default: [], array: true
+    t.integer "container_width"
+    t.bigint "start_date"
+    t.bigint "end_date"
   end
 
   create_table "employment_types", force: :cascade do |t|

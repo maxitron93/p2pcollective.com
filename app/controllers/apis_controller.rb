@@ -1,22 +1,33 @@
 class ApisController < ApplicationController
+  require 'securerandom'
+
   def get_chart
     chart = Chart.where(chart: params[:chart]).first
     if chart == nil
-      chart = Chart.find(2)
+      chart = Chart.where(chart: "default").first
     end
     render json: chart
   end
 
   def save_chart
-    Chart.create!(
-      chart: params[:chart],
-      project_name: params[:project_name],
-      start_date: params[:start_date],
-      end_date: params[:end_date],
-      show_main_gridlines: params[:show_main_gridlines],
-      show_sub_gridlines: params[:show_sub_gridlines],
-      row_spacing: params[:row_spacing],
-      rows: params[:rows]
-      )
+    if params[:module] == '*(V5*69)c5I&$Coo#$^vb*Vb7o*7'
+      chart_key = SecureRandom.hex(8)
+      
+      Chart.create!(
+        chart: chart_key,
+        container_width: params[:containerWidth],
+        project_name: params[:projectName],
+        start_date: params[:startDate],
+        end_date: params[:endDate],
+        row_spacing: params[:rowSpacing],
+        rows: params[:rows]
+        )
+      
+      render json: {
+         message: "Chart saved",
+         chart_key: chart_key
+        }
+    end
   end
+
 end
