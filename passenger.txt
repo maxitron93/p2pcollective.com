@@ -1,0 +1,11 @@
+# Go to directory of the app
+/apps/p2pcollective.com_staging/releases/20190308081332
+
+# Start passenger as daemon
+passenger start -d
+
+# Check status of passenger
+passenger-status
+
+# Stop passenger 
+passenger stop
