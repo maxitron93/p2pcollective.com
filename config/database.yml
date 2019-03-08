@@ -24,10 +24,10 @@ default: &default
 
 development:
   <<: *default
-  username: <%= ENV['POSTGRES_USERNAME'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: <%= ENV['POSTGRES_HOST'] %>
-  database: p2pcollective_com_development
+  database: p2pcollective_staging
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,10 +61,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  username: <%= ENV['POSTGRES_USERNAME'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: <%= ENV['POSTGRES_HOST'] %>
-  database: p2pcollective_com_test
+  database: p2pcollective_staging
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
