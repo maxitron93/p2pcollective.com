@@ -87,12 +87,12 @@ test:
 #
 staging:
   <<: *default
-  database: p2pcollective_com_staging
-  username: <%= ENV['POSTGRES_USERNAME'] %>
+  database: p2pcollective_staging
+  username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 production:
   <<: *default
-  database: p2pcollective_com_production
-  username: <%= ENV['POSTGRES_USERNAME'] %>
+  database: p2pcollective_production
+  username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>

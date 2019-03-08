@@ -20,12 +20,12 @@
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
-role :app, %w{deploy@128.199.210.185}
-role :web, %w{deploy@128.199.210.185}
-role :db, %w{deploy@128.199.210.185}, primary: true
+role :app, %w{maxi@128.199.250.39}
+role :web, %w{maxi@128.199.250.39}
+role :db, %w{maxi@128.199.250.39}, primary: true
 set :branch, "production"
 set :rails_env, "production"
-set :deploy_to, "/var/www/p2pcollective_com_production"
+set :deploy_to, "/apps/p2pcollective.com_production"
 
 
 # Configuration
